@@ -31,7 +31,7 @@ DuiLib::CDuiString CDuiFrameWnd::GetSkinFolder()
 void CDuiFrameWnd::InitWindow()
 {
 
-	SetIcon(IDI_ICON_WHITE);
+	SetIcon(IDI_ICON_BLACK);
 
 	CListUI* pList = (CListUI*)m_PaintManager.FindControl(_T("itemlist"));
 	if (pList == NULL)

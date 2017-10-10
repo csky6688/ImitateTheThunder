@@ -1,7 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- 整体布局结构 -->
 <Window size="750,40">
-    <HorizontalLayout bkcolor="FFFFFFFF" bordersize="2" >
-        
-    </HorizontalLayout>
+    <VerticalLayout bkcolor="FFFFFFFF">
+        <HorizontalLayout height="1" bkcolor="FFCDCDCD" />
+    
+        <HorizontalLayout padding="4,9,0,0" height="26">
+            <Button name="light" width="32" normalimage="img/light/normal.png" hotimage="img/light/focus.png" pushedimage="img/light/push.png" />
+            <Button name="notlight" float="true" pos="0,0,32,26" visible="false" width="32" normalimage="img/light/normal2.png" hotimage="img/light/focus2.png" pushedimage="img/light/push2.png" />
+            <Control width="19" bkimage="img/light/split.png" />
+        </HorizontalLayout>
+    </VerticalLayout>
 </Window>

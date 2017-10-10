@@ -62,7 +62,7 @@
                     <HorizontalLayout height="20">
                         <VerticalLayout width="50" />
                         <VerticalLayout>
-                            <HorizontalLayout>
+                            <HorizontalLayout height="15">
                                 <Control name="circle2" height="15" width="15" bkimage="circle.png" padding="1,1,5,1" />
                                 <Label name="text2" height="15" text="离线下载可代你挂机" align="left" valign="center" />
                             </HorizontalLayout>
