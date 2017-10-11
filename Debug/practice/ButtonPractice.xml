@@ -3,9 +3,30 @@
 <Window size="600,600">
     <VerticalLayout>
         <HorizontalLayout height="100" bkcolor="FF46B39E" />
-        <HorizontalLayout height="100" bkcolor="FF27AE61" />
-        <HorizontalLayout height="100" bkcolor="FF58D68D" />
-        <HorizontalLayout height="100" bkcolor="FF3598DB" />
+        <HorizontalLayout height="100" bkcolor="FF27AE61">
+            <HorizontalLayout height="80" padding="10,10,10,10" childpadding="10">
+                <Button name="min" width="80" normalimage="image/min1.png" />
+                <Button name="max" width="80" normalimage="image/max1.png"/>
+                <Button name="restore" visited="visible" width="80" normalimage="image/restore1.png"/>
+                <Button name="min1" width="80" normalimage="image/min1.png" />
+                <Button name="max1" width="80" normalimage="image/max1.png"/>
+                <Button name="restore1" visited="visible" width="80" normalimage="image/restore1.png"/>
+            </HorizontalLayout>
+        </HorizontalLayout>
+        <HorizontalLayout height="100" bkcolor="FF58D68D">
+            <HorizontalLayout height="80" padding="10,10,10,10" childpadding="10">
+                <Button name="min2" width="80" normalimage="image/min0.png" />
+                <Button name="max2" width="80" normalimage="image/max0.png"/>
+                <Button name="restore2" visited="visible" width="80" normalimage="image/restore0.png"/>
+            </HorizontalLayout>
+        </HorizontalLayout>
+        <HorizontalLayout height="100" bkcolor="FF3598DB">
+            <HorizontalLayout height="80" padding="10,10,10,10" childpadding="10">
+                <Button name="min2" width="80" normalimage="image/min0.png" />
+                <Button name="max2" width="80" normalimage="image/max0.png"/>
+                <Button name="restore2" visited="visible" width="80" normalimage="image/restore0.png"/>
+            </HorizontalLayout>
+        </HorizontalLayout>
         <HorizontalLayout height="100" bkcolor="FF297FB8" />
         <HorizontalLayout height="100" bkcolor="FF007CAE" />
     </VerticalLayout>
