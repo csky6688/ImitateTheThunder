@@ -14,8 +14,8 @@
                         <!-- 第二列 文件名 大小 进度条 时间 -->
                         <VerticalLayout>
                             <!-- 1 文件名 进度条  -->
-                            <HorizontalLayout height="25">
-                                <VerticalLayout padding="5,5,0,2">
+                            <HorizontalLayout height="25" >
+                                <VerticalLayout padding="5,5,0,2" minwidth="200">
                                     <Label name="fileName" text="fileName" height="15" valign="center"/>
                                 </VerticalLayout>
                                 <VerticalLayout />
