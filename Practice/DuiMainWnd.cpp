@@ -30,6 +30,13 @@ DuiLib::CDuiString CDuiMainWnd::GetSkinFolder()
 
 void CDuiMainWnd::InitWindow()
 {
+	m_PaintManager.RemoveAllFonts(true);
+	m_PaintManager.AddFont(0, L"Microsoft YaHei UI", 20, false, false, true, true);
+	CTextUI* pLabel = (CTextUI*)m_PaintManager.FindControl(_T("itemText1"));
+	if (pLabel != NULL)
+	{
+		pLabel->SetFont(0);
+	}
 }
 
 CControlUI* CDuiMainWnd::CreateControl(LPCTSTR pstrClassName)
@@ -44,7 +51,6 @@ CControlUI* CDuiMainWnd::CreateControl(LPCTSTR pstrClassName)
 	{
 		pUI = builder.Create(L"rightPane.xml");
 	}
-
 	return pUI;
 
 	//return NULL;

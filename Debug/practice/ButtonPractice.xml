@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 整体布局结构 -->
+<Window size="600,600">
+    <VerticalLayout>
+        <HorizontalLayout height="100" bkcolor="FF46B39E" />
+        <HorizontalLayout height="100" bkcolor="FF27AE61" />
+        <HorizontalLayout height="100" bkcolor="FF58D68D" />
+        <HorizontalLayout height="100" bkcolor="FF3598DB" />
+        <HorizontalLayout height="100" bkcolor="FF297FB8" />
+        <HorizontalLayout height="100" bkcolor="FF007CAE" />
+    </VerticalLayout>
+</Window>
