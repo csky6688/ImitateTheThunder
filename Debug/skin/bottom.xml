@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 整体布局结构 -->
+<Window size="750,40">
+    <VerticalLayout bkcolor="FFFFFFFF">
+        <HorizontalLayout height="1" bkcolor="FFCDCDCD" />
+        <HorizontalLayout padding="4,9,0,0" height="26">
+            <Button name="light" width="32" normalimage="img/light/normal.png" hotimage="img/light/focus.png" pushedimage="img/light/push.png" />
+            <Button name="notlight" float="true" pos="0,0,32,26" visible="false" width="32" normalimage="img/light/normal2.png" hotimage="img/light/focus2.png" pushedimage="img/light/push2.png" />
+            <Control width="19" bkimage="img/light/split.png" />
+            <!-- <Button name="speed" width="107" normalimage="img/light/s0.png" hotimage="img/light/s1.png" pushedimage="img/light/s2.png" /> -->
+            <HorizontalLayout padding="0,1,0,1" width="107">
+                <VerticalLayout width="6" />
+                <Control width="24" bkimage="file='img/light/s0.png' source='5,1,29,25'"/>
+                <Label width="60" text="自定义限速" align="center" />
+                <Button width="17" normalimage="file='img/light/a2.png'" hotimage="file='img/light/a1.png'" pushedimage="img/light/a1.png" />
+            </HorizontalLayout>
+            <Control width="19" bkimage="img/light/split.png" />
+            <HorizontalLayout padding="0,1,0,1" width="100">
+                <VerticalLayout width="6" />
+                <Control width="18" bkimage="img/light/m4.png" padding="0,3,0,3"/>
+                <Text width="58" text="计划任务" align="left" textpadding="7,6,0,0" />
+                <Button width="17" normalimage="file='img/light/a2.png'" hotimage="file='img/light/a1.png'" pushedimage="img/light/a1.png" />
+            </HorizontalLayout>
+            <Text name="plan"  />
+        </HorizontalLayout>
+    </VerticalLayout>
+</Window>

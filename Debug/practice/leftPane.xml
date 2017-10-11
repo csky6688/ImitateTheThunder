@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 整体布局结构 -->
+<Window size="200,600">
+    <Font id="0" name="font1" size="50" bold="true" italic="true" />
+    <VerticalLayout bkcolor="FF3B4751">
+        <HorizontalLayout height="80" />
+        <TreeView name="leftTree" width="200" visiblefolderbtn="false" visiblecheckbtn="false" itemfont="0" itemtextcolor="FF8DA09A" itemselectedtextcolor="FF51A599" itemhottextcolor="FFFEFEFE" itemhotbkcolor="FF313A42" itemselectedbkcolor="FF252C32">
+            <TreeNode height="50" width="200">
+                <HorizontalLayout width="200" height="50">
+                    <Label name="itemText1" width="200" text="ButtonPractice" font="1" align="center" />
+                </HorizontalLayout>
+            </TreeNode>
+        </TreeView>
+    </VerticalLayout>
+</Window>

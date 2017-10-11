@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 整体布局结构 -->
+<Window size="200,600">
+    <Font id="0" name="font1" size="50" bold="true" italic="true" />
+    <VerticalLayout bkcolor="FFD2EFFF">
+        <TabLayout name="tab" />
+    </VerticalLayout>
+</Window>

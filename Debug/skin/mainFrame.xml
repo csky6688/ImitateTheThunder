@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <!-- 整体布局结构 -->
-<Window size="960,700" caption="0,0,0,80" sizebox="4,4,4,4">
+<Window size="960,700" caption="0,0,0,80" sizebox="4,4,4,4" mininfo="850,500">
     <HorizontalLayout>
         <VerticalLayout width="208">
             <LeftPane />
         </VerticalLayout>
-        <VerticalLayout>
+        <VerticalLayout  minwidth="652">
             <Caption height="80" />
             <ListView />
             <Bottom height="40" />

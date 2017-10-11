@@ -25,7 +25,7 @@ DuiLib::CDuiString CDuiFrameWnd::GetSkinFile()
 
 DuiLib::CDuiString CDuiFrameWnd::GetSkinFolder()
 {
-	return L"";
+	return L"skin";
 }
 
 void CDuiFrameWnd::InitWindow()
