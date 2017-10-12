@@ -4,6 +4,7 @@
 #include "resource.h"
 
 
+
 CDuiFrameWnd::CDuiFrameWnd()
 {
 }
@@ -76,6 +77,7 @@ CControlUI* CDuiFrameWnd::CreateControl(LPCTSTR pstrClassName)
 	{
 		pUI = builder.Create(L"bottom.xml");
 	}
+
 
 	return pUI;
 

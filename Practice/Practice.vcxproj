@@ -79,6 +79,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Ext\UIColorSkin.h" />
     <ClInclude Include="DuiMainWnd.h" />
     <ClInclude Include="Practice.h" />
     <ClInclude Include="Resource.h" />
@@ -86,6 +87,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Ext\UIColorSkin.cpp" />
     <ClCompile Include="DuiMainWnd.cpp" />
     <ClCompile Include="Practice.cpp" />
     <ClCompile Include="stdafx.cpp">

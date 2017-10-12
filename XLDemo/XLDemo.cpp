@@ -19,7 +19,6 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPTSTR lpCmdL
 	duiFrame.CenterWindow();
 	duiFrame.ShowModal();
 
-
 	return 0;
 }
 

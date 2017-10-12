@@ -6,9 +6,14 @@
             <Control bkimage="image/practice (5).png" padding="60,30,60,30" />
         </HorizontalLayout>
         <TreeView name="leftTree" width="200" visiblefolderbtn="false" visiblecheckbtn="false" itemfont="0" itemtextcolor="FF8DA09A" itemselectedtextcolor="FF51A599" itemhottextcolor="FFFEFEFE" itemhotbkcolor="FF313A42" itemselectedbkcolor="FF252C32">
-            <TreeNode height="50" width="200">
+            <TreeNode name="btndemo" height="50" width="200">
                 <HorizontalLayout width="200" height="50">
-                    <Label name="itemText1" width="200" text="ButtonPractice" align="center" />
+                    <Label name="btndemotext" width="200" text="Button" align="center" />
+                </HorizontalLayout>
+            </TreeNode>
+            <TreeNode name="tiledemo" height="50" width="200">
+                <HorizontalLayout width="200" height="50">
+                    <Label name="tiledemotext" width="200" text="TileLayout" align="center" />
                 </HorizontalLayout>
             </TreeNode>
         </TreeView>

@@ -4,9 +4,11 @@
     <VerticalLayout>
         <!--  -->
         <TabLayout name="tab" width="600" height="600">
-            <VerticalLayout>
+         
                 <ChildLayout xmlfile="ButtonPractice.xml" />
-            </VerticalLayout>
+                <!-- <MyColorSkin name="color" float="true" pos="9,6,0,0" sidelen="16" width="310" height="120" bkcolor="FFFFFFFF" /> -->
+                <TileLayout xmlfile="TileLayoutPractice.xml" />
+           
         </TabLayout>
     </VerticalLayout>
 </Window>

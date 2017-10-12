@@ -11,6 +11,9 @@ public:
 
 	virtual void InitWindow();
 
+	virtual void Notify(TNotifyUI& msg);
+
 	virtual CControlUI* CreateControl(LPCTSTR pstrClassName);
+	void TreeNodeItemEvent();
 };
 
