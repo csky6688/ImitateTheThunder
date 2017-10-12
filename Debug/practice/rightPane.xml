@@ -2,13 +2,7 @@
 <!-- 整体布局结构 -->
 <Window size="600,600">
     <VerticalLayout>
-        <HorizontalLayout height="31">
-            <VerticalLayout />
-            <HorizontalLayout width="92">
-                <Button name="minbtn" tooltip="最小化" width="46" normalimage="SysBtn/min3.png " hotimage="SysBtn/min1.png" pushedimage="SysBtn/min1.png"/>
-                <Button name="closebtn" tooltip="关闭" width="46" normalimage="SysBtn/close3.png " hotimage="SysBtn/close1.png" pushedimage="SysBtn/close1.png "/>
-            </HorizontalLayout>
-        </HorizontalLayout>
+        <!--  -->
         <TabLayout name="tab" width="600" height="600">
             <VerticalLayout>
                 <ChildLayout xmlfile="ButtonPractice.xml" />

@@ -1,33 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 整体布局结构 -->
-<Window size="600,600">
+<Window size="600,569">
     <VerticalLayout>
         <HorizontalLayout height="100" bkcolor="FF46B39E" />
-        <HorizontalLayout height="100" bkcolor="FF27AE61">
-            <HorizontalLayout height="80" padding="10,10,10,10" childpadding="10">
-                <Button name="min" width="80" normalimage="image/min1.png" />
-                <Button name="max" width="80" normalimage="image/max1.png"/>
-                <Button name="restore" visited="visible" width="80" normalimage="image/restore1.png"/>
-                <Button name="min1" width="80" normalimage="image/min1.png" />
-                <Button name="max1" width="80" normalimage="image/max1.png"/>
-                <Button name="restore1" visited="visible" width="80" normalimage="image/restore1.png"/>
+        <!-- 动态按钮 每个状态有不同的图片 -->
+        <HorizontalLayout height="100" >
+            <HorizontalLayout height="80" padding="10,10,10,10" childpadding="10" width="300">
+                <Button name="min" width="80" normalimage="image/min4.png" hotimage="image/min2.png" pushedimage="image/min1.png" focusedimage="image/min3.png"/>
+                <Button name="max" width="80" normalimage="image/max4.png" hotimage="image/max2.png" pushedimage="image/max1.png" focusedimage="image/max3.png"/>
+                <Button name="res" width="80" normalimage="image/restore4.png" hotimage="image/restore2.png" pushedimage="image/restore1.png" focusedimage="image/restore3.png"/>
+            </HorizontalLayout>
+
+            <HorizontalLayout height="80" padding="10,10,10,10" childpadding="10" >
+                <Button name="min2" width="80" normalimage="image/min0.png" bkcolor="FF3DDAF2"/>
+                <Button name="max2" width="80" normalimage="image/max0.png" bkcolor="FF3DDAF2" />
+                <Button name="restore2" width="80" normalimage="image/restore0.png"  bkcolor="FF3DDAF2"/>
             </HorizontalLayout>
         </HorizontalLayout>
+        <!-- 动态背景色 和 透明度 -->
         <HorizontalLayout height="100" bkcolor="FF58D68D">
-            <HorizontalLayout height="80" padding="10,10,10,10" childpadding="10">
-                <Button name="min2" width="80" normalimage="image/min0.png" />
-                <Button name="max2" width="80" normalimage="image/max0.png"/>
-                <Button name="restore2" visited="visible" width="80" normalimage="image/restore0.png"/>
-            </HorizontalLayout>
+            
         </HorizontalLayout>
-        <HorizontalLayout height="100" bkcolor="FF3598DB">
-            <HorizontalLayout height="80" padding="10,10,10,10" childpadding="10">
-                <Button name="min2" width="80" normalimage="image/min0.png" />
-                <Button name="max2" width="80" normalimage="image/max0.png"/>
-                <Button name="restore2" visited="visible" width="80" normalimage="image/restore0.png"/>
-            </HorizontalLayout>
-        </HorizontalLayout>
-        <HorizontalLayout height="100" bkcolor="FF297FB8" />
-        <HorizontalLayout height="100" bkcolor="FF007CAE" />
+        <!-- 其他 -->
+        
+        <HorizontalLayout height="300" bkcolor="FF297FB8" />
     </VerticalLayout>
 </Window>

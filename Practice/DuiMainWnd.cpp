@@ -37,6 +37,11 @@ void CDuiMainWnd::InitWindow()
 	{
 		pLabel->SetFont(0);
 	}
+
+	
+
+	//CColorDialog dlg;
+	//dlg.DoModal();
 }
 
 CControlUI* CDuiMainWnd::CreateControl(LPCTSTR pstrClassName)
@@ -55,4 +60,3 @@ CControlUI* CDuiMainWnd::CreateControl(LPCTSTR pstrClassName)
 
 	//return NULL;
 }
-

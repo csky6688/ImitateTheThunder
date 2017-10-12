@@ -30,7 +30,6 @@ DuiLib::CDuiString CDuiFrameWnd::GetSkinFolder()
 
 void CDuiFrameWnd::InitWindow()
 {
-
 	SetIcon(IDI_ICON_BLACK);
 
 	CListUI* pList = (CListUI*)m_PaintManager.FindControl(_T("itemlist"));
@@ -44,7 +43,6 @@ void CDuiFrameWnd::InitWindow()
 	CListContainerElementUI* pElem = NULL;
 
 	pElem = (CListContainerElementUI*)builder.Create(L"xlListNodeFocusEx.xml");
-	//CListContainerElementUI* pElem2 = (CListContainerElementUI*)builder.Create(L"xlListNodeFocusEx.xml");
 
 	CDialogBuilder builder2;
 	CListContainerElementUI* pElem2 = NULL;

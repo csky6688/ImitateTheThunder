@@ -2,7 +2,7 @@
 <!-- 整体布局结构 -->
 <Window size="200,600">
     <VerticalLayout bkcolor="FF3B4751">
-        <HorizontalLayout height="140" >
+        <HorizontalLayout height="140">
             <Control bkimage="image/practice (5).png" padding="60,30,60,30" />
         </HorizontalLayout>
         <TreeView name="leftTree" width="200" visiblefolderbtn="false" visiblecheckbtn="false" itemfont="0" itemtextcolor="FF8DA09A" itemselectedtextcolor="FF51A599" itemhottextcolor="FFFEFEFE" itemhotbkcolor="FF313A42" itemselectedbkcolor="FF252C32">
@@ -12,5 +12,16 @@
                 </HorizontalLayout>
             </TreeNode>
         </TreeView>
+        <HorizontalLayout />
+        <HorizontalLayout height="31">
+            <HorizontalLayout name="sysbtn" align="center">
+                <VerticalLayout />
+                <HorizontalLayout width="92">
+                    <Button name="minbtn" tooltip="最小化" width="46" normalimage="SysBtn/min3.png " hotimage="SysBtn/min1.png" pushedimage="SysBtn/min1.png"/>
+                    <Button name="closebtn" tooltip="关闭" width="46" normalimage="SysBtn/close3.png " hotimage="SysBtn/close1.png" pushedimage="SysBtn/close1.png "/>
+                </HorizontalLayout>
+                <VerticalLayout />
+            </HorizontalLayout>
+        </HorizontalLayout>
     </VerticalLayout>
 </Window>
