@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 整体布局结构 -->
 <Window size="800,600" caption="0,0,0,31" sizebox="4,4,4,4" mininfo="800,600" maxinfo="800,600">
-    <VerticalLayout bkcolor="FFF0F0F0">
-        <HorizontalLayout>
+    <!-- <VerticalLayout bkcolor="FFF0F0F0"> -->
+        <HorizontalLayout bkcolor="FFF0F0F0">
             <VerticalLayout width="200">
                 <LeftPane />
             </VerticalLayout>
-            <VerticalLayout>
+            <VerticalLayout width="600">
                 <RightPane />
             </VerticalLayout>
         </HorizontalLayout>
-    </VerticalLayout>
+    <!-- </VerticalLayout> -->
 </Window>

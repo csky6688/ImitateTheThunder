@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 整体布局结构 -->
+<Window size="600,600">
+    <HorizontalLayout>
+        <VerticalLayout Width="300" bkcolor="FF56998E">
+            <Include source="ListPractice.xml" />
+        </VerticalLayout>
+        <VerticalLayout bkcolor="EE46B39E">
+            <Include source="TreePractice.xml" />
+        </VerticalLayout>
+    </HorizontalLayout>
+</Window>

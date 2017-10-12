@@ -3,12 +3,10 @@
 <Window size="600,600">
     <VerticalLayout>
         <!--  -->
-        <TabLayout name="tab" width="600" height="600">
-         
-                <ChildLayout xmlfile="ButtonPractice.xml" />
-                <!-- <MyColorSkin name="color" float="true" pos="9,6,0,0" sidelen="16" width="310" height="120" bkcolor="FFFFFFFF" /> -->
-                <TileLayout xmlfile="TileLayoutPractice.xml" />
-           
+        <TabLayout name="tab" width="600" height="600" vscrollbar="false">
+            <ChildLayout xmlfile="ButtonDemo.xml" />
+            <ChildLayout xmlfile="TileLayoutDemo.xml" />
+            <ChildLayout xmlfile="ListDemo.xml" />
         </TabLayout>
     </VerticalLayout>
 </Window>

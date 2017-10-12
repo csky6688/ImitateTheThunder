@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 整体布局结构 -->
+<Window size="300,600">
+    <HorizontalLayout padding="">
+        <VerticalLayout Width="300" bkcolor="FF56998E">
+            <Include source="ListPritice.xml" />
+        </VerticalLayout>
+        <VerticalLayout bkcolor="EE46B39E">
+            <Include source="TreePritice.xml" />
+        </VerticalLayout>
+    </HorizontalLayout>
+</Window>
