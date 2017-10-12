@@ -19,10 +19,13 @@ bld/
 ./*/Debug
 ./*/Release
 *.tlog
+./Debug/*.exe
+./Release/*.exe
 
 *.pdb
 *.ilk
 *.idb
+*.exp
 
 # Roslyn cache directories
 *.ide/
