@@ -2,11 +2,14 @@
 <!-- 整体布局结构 -->
 <Window size="600,600">
     <HorizontalLayout>
-        <VerticalLayout Width="300" bkcolor="FF56998E">
-            <Include source="ListPractice.xml" />
+        <VerticalLayout width="298" bkcolor="FF56998E">
+            <!-- <ChildLayout xmlfile="ListPractice.xml" /> -->
+             <Include source="ListPractice.xml" />
         </VerticalLayout>
-        <VerticalLayout bkcolor="EE46B39E">
-            <Include source="TreePractice.xml" />
+        <VerticalLayout width="2" />
+        <VerticalLayout width="298" bkcolor="EE46B39E">
+            <!-- <ChildLayout xmlfile="TreePractice.xml" /> -->
+             <Include source="TreePractice.xml" />
         </VerticalLayout>
     </HorizontalLayout>
 </Window>

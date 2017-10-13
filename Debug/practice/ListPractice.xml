@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 整体布局结构 -->
-<Window size="300,600">
-    <HorizontalLayout padding="">
-        <VerticalLayout Width="300" bkcolor="FF56998E">
-            <Include source="ListPritice.xml" />
+<Window size="298,600">
+    <VerticalLayout>
+        <VerticalLayout padding="0,30,0,30" vscrollbar="true">
+            <List name="list" header="hidden" scrollselect="true" colorhsl="true">
+                <!-- <ChildLayout xmlfile="ListItem.xml" /> -->
+            </List>
         </VerticalLayout>
-        <VerticalLayout bkcolor="EE46B39E">
-            <Include source="TreePritice.xml" />
-        </VerticalLayout>
-    </HorizontalLayout>
+        <HorizontalLayout height="50">
+            <VerticalLayout />
+            <HorizontalLayout width="120">
+                <Button name="addListItem" width="50" normalimage="image/add1.png" hotimage="image/add4.png" pushedimage="image/add4.png" />
+                <VerticalLayout width="20" />
+                <Button name="delListItem" width="50" normalimage="image/del1.png" hotimage="image/del4.png" pushedimage="image/del4.png" />
+            </HorizontalLayout>
+            <VerticalLayout />
+        </HorizontalLayout>
+    </VerticalLayout>
 </Window>

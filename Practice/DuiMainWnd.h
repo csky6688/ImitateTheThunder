@@ -14,6 +14,10 @@ public:
 	virtual void Notify(TNotifyUI& msg);
 
 	virtual CControlUI* CreateControl(LPCTSTR pstrClassName);
-	void TreeNodeItemEvent();
+	void ColorInit();
+	void Arr(BYTE* str, int pos, int len);
+	DWORD Array2ARGB(BYTE* array);
+	vector<BYTE> list;
+	vector<DWORD> m_colorList;
 };
 

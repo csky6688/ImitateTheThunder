@@ -2,7 +2,7 @@
 <!-- 整体布局结构 -->
 <Window size="600,569">
     <VerticalLayout>
-        <HorizontalLayout height="100" bkcolor="FF46B39E" />
+        <HorizontalLayout height="50" bkcolor="FF46B39E" />
         <!-- 动态按钮 每个状态有不同的图片 -->
         <HorizontalLayout height="100">
             <HorizontalLayout height="80" padding="10,10,10,10" childpadding="10" width="300">
@@ -16,45 +16,11 @@
                 <Button name="restore2" width="80" normalimage="image/restore0.png" bkcolor="FF3DDAF2"/>
             </HorizontalLayout>
         </HorizontalLayout>
-        <!-- 动态背景色 和 透明度 -->
-        <HorizontalLayout height="100" bkcolor="FF58D68D"></HorizontalLayout>
-        <!-- 其他 -->
-        <VerticalLayout height="300" bkcolor="FF297FB8">
-            <!-- <HorizontalLayout height="30" padding="10,10,10,0" childpadding="10">
-                <Button name="color1" bkcolor="FFFF0000" width="30" />
-                <Button name="color1" bkcolor="FFFFFF00" width="30" />
-                <Button name="color1" bkcolor="FF00FF00" width="30" />
-                <Button name="color1" bkcolor="FF00FFFF" width="30" />
-                <Button name="color1" bkcolor="FF0000FF" width="30" />
-                <Button name="color1" bkcolor="FFFF00FF" width="30" />
-            </HorizontalLayout>
-            <HorizontalLayout height="30" padding="10,10,10,0" childpadding="10">
-                <Button name="color1" bkcolor="FFC00000" width="30" />
-               <Button name="color1" bkcolor="FFC0C000" width="30" />
-                <Button name="color1" bkcolor="FF00C000" width="30" />
-                <Button name="color1" bkcolor="FF00C0C0" width="30" />
-                <Button name="color1" bkcolor="FF0000C0" width="30" />
-                <Button name="color1" bkcolor="FFC000C0" width="30" />
-            </HorizontalLayout>
-            <HorizontalLayout height="30" padding="10,10,10,0" childpadding="10">
-                <Button name="color1" bkcolor="FF800000" width="30" />
-                <Button name="color1" bkcolor="FF808000" width="30" />
-                <Button name="color1" bkcolor="FF008000" width="30" />
-                <Button name="color1" bkcolor="FF008080" width="30" />
-                <Button name="color1" bkcolor="FF000080" width="30" />
-                <Button name="color1" bkcolor="FF800080" width="30" />
-            </HorizontalLayout>
-            <HorizontalLayout height="30" padding="10,10,10,0" childpadding="10">
-                <Button name="color1" bkcolor="FF400000" width="30" />
-                 <Button name="color1" bkcolor="FF404000" width="30" />
-                <Button name="color1" bkcolor="FF004000" width="30" />
-                <Button name="color1" bkcolor="FF004040" width="30" />
-                <Button name="color1" bkcolor="FF000040" width="30" />
-                <Button name="color1" bkcolor="FF400040" width="30" />
-            </HorizontalLayout> -->
-            <!-- <HorizontalLayout height="300"> -->
-                <!-- <MyColorSkin name="color"  float="true" pos="9,6,0,0" sidelen="16" width="310" height="120" bkcolor="FFFFFFFF" /> -->
-            <!-- </HorizontalLayout> -->
+    
+        <VerticalLayout height="450" bkcolor="FF297FB8">
+            <VerticalLayout float="true" pos="0,0,486,486">
+                <TileLayout name="colortile"  itemsize="6,6"></TileLayout>
+            </VerticalLayout>
         </VerticalLayout>
     </VerticalLayout>
 </Window>

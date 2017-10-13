@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 整体布局结构 -->
+<Window size="298,60">
+    <!-- <Font shared="true" id="1" size="20" default="true" /> -->
+    <Font shared="true" id="1" size="15" default="true" />
+    <ListContainerElement name="my_list_node" height="60">
+        <HorizontalLayout >
+            <VerticalLayout width="60">
+                <Control name="itemimage" padding="10,10,10,10" bkimage="image/practice (1).png" />
+            </VerticalLayout>
+            <VerticalLayout>
+                <Text name="nick" text="nickname" padding="2,7,10,3" font="0"/>
+                <Text name="content" text="text" endellipsis="true" padding="2,0,10,10" font="1" />
+            </VerticalLayout>
+            <VerticalLayout width="40"></VerticalLayout>
+        </HorizontalLayout>
+    </ListContainerElement>
+</Window>
