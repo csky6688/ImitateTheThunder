@@ -2,6 +2,8 @@
 #include "stdafx.h"
 #include "DuiMainWnd.h"
 
+#include "MyListItem.h"
+
 //#include "../Ext/UIColorSkin.h"
 
 CDuiMainWnd::CDuiMainWnd()
@@ -172,10 +174,11 @@ void CDuiMainWnd::Notify(TNotifyUI& msg)
 	{
 		CDuiString strName = msg.pSender->GetName();
 		CListUI* pList = (CListUI*)m_PaintManager.FindControl(_T("list"));
+		CTreeViewUI* pTree = (CTreeViewUI*)m_PaintManager.FindControl(_T("tree"));
+		CDialogBuilder builder;
 		if (strName == L"addListItem")
 		{
-			CDialogBuilder builder;
-			CListContainerElementUI* pElem = NULL;
+			/*CListContainerElementUI* pElem = NULL;
 			pElem = (CListContainerElementUI*)builder.Create(L"ListItem.xml");
 
 			CControlUI* pImage = pElem->FindSubControl(L"itemimage");
@@ -187,7 +190,9 @@ void CDuiMainWnd::Notify(TNotifyUI& msg)
 			CTextUI* pNick = (CTextUI*)pElem->FindSubControl(L"nick");
 			CString strNick;
 			strNick.Format(L"NickName%ld", rand());
-			pNick->SetText(strNick);
+			pNick->SetText(strNick);*/
+
+			CMyListItem* pElem = (CMyListItem*)builder.Create(L"ListItem.xml");
 
 			pList->Add(pElem);
 		}
@@ -201,8 +206,21 @@ void CDuiMainWnd::Notify(TNotifyUI& msg)
 				pList->RemoveAt(index);
 			}
 		}
-	}
+		else if (strName == L"addTreeNode")
+		{
+			//CControlUI* pNode = NULL;
 
+			//pNode = static_cast<CControlUI*>(builder.Create(L"TreeItem.xml"));
+
+			//pTree->Add(pNode);
+
+			CMyTreeNode* pNode = (CMyTreeNode*)builder.Create(L"TreeItem.xml");
+
+			pTree->Add(pNode);
+
+		}
+	}
+	
 
 	__super::Notify(msg);
 }

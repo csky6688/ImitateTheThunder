@@ -3,12 +3,24 @@
 <Window size="600,600">
     <VerticalLayout>
         <VerticalLayout padding="0,30,0,30" vscrollbar="true">
-            <TreeView name="tree" visiblefolderbtn="false" visiblecheckbtn="false" colorhsl="true">
+            <TreeView name="tree_practice" visiblefolderbtn="false" visiblecheckbtn="false" colorhsl="true">
                 <!-- <ChildLayout xmlfile="ListItem.xml" /> -->
-                <TreeNode height="60" width="298">
+                <TreeNode name="tree_node_head" height="60" width="298">
                     <HorizontalLayout height="60" width="298">
                         <VerticalLayout width="60">
                             <Control name="itemimage" padding="10,10,10,10" bkimage="image/practice (1).png" />
+                        </VerticalLayout>
+                        <VerticalLayout>
+                            <Text name="nick" text="nickname" padding="2,7,10,3" font="0"/>
+                            <Text name="content" text="text" endellipsis="true" padding="2,0,10,10" font="1" />
+                        </VerticalLayout>
+                        <VerticalLayout width="40"></VerticalLayout>
+                    </HorizontalLayout>
+                </TreeNode>
+                <TreeNode height="60">
+                    <HorizontalLayout >
+                        <VerticalLayout width="60">
+                            <Control name="nodeimage" padding="10,10,10,10" bkimage="image/practice (1).png" />
                         </VerticalLayout>
                         <VerticalLayout>
                             <Text name="nick" text="nickname" padding="2,7,10,3" font="0"/>

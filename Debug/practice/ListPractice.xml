@@ -5,6 +5,7 @@
         <VerticalLayout padding="0,30,0,30" vscrollbar="true">
             <List name="list" header="hidden" scrollselect="true" colorhsl="true">
                 <!-- <ChildLayout xmlfile="ListItem.xml" /> -->
+                <!-- <ListItem  /> -->
             </List>
         </VerticalLayout>
         <HorizontalLayout height="50">

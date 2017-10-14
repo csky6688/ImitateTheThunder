@@ -33,7 +33,7 @@
     <ClInclude Include="DuiMainWnd.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="..\Ext\UIColorSkin.h">
+    <ClInclude Include="MyListItem.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -47,7 +47,7 @@
     <ClCompile Include="DuiMainWnd.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="..\Ext\UIColorSkin.cpp">
+    <ClCompile Include="MyListItem.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
