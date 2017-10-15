@@ -21,7 +21,28 @@
                 <Text width="58" text="计划任务" align="left" textpadding="7,6,0,0" />
                 <Button width="17" normalimage="file='img/light/a2.png'" hotimage="file='img/light/a1.png'" pushedimage="img/light/a1.png" />
             </HorizontalLayout>
-            <Text name="plan"  />
+            <HorizontalLayout />
+            <HorizontalLayout padding="0,1,0,1" width="200">
+                <HorizontalLayout width="100">
+                    <VerticalLayout width="8" />
+                    <Control width="15" bkimage="img/light/b1.png" padding="0,4,0,4"/>
+                    <Text width="58" text="0KB/s" align="left" textpadding="1,6,0,0" />
+                    <!-- <Button width="17" normalimage="file='img/light/a2.png'" hotimage="file='img/light/a1.png'" pushedimage="img/light/a1.png" /> -->
+                    <VerticalLayout  />
+                </HorizontalLayout>
+                <HorizontalLayout width="100">
+                    <VerticalLayout width="8" />
+                    <Control width="15" bkimage="img/light/b2.png" padding="0,4,0,4"/>
+                    <Text width="58" text="0KB/s" align="left" textpadding="1,6,0,0" />
+                    <!-- <Button width="17" normalimage="file='img/light/a2.png'" hotimage="file='img/light/a1.png'" pushedimage="img/light/a1.png" /> -->
+                    <VerticalLayout  />
+                </HorizontalLayout>
+            </HorizontalLayout>
+            <HorizontalLayout width="20">
+                <VerticalLayout padding="5,11,5,5">
+                    <Control bkimage="img/light/ar.png" />
+                </VerticalLayout>
+            </HorizontalLayout>
         </HorizontalLayout>
     </VerticalLayout>
 </Window>

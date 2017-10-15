@@ -17,7 +17,7 @@
                         <VerticalLayout width="40"></VerticalLayout>
                     </HorizontalLayout>
                 </TreeNode>
-                <TreeNode height="60">
+                <!-- <TreeNode height="60">
                     <HorizontalLayout >
                         <VerticalLayout width="60">
                             <Control name="nodeimage" padding="10,10,10,10" bkimage="image/practice (1).png" />
@@ -28,7 +28,7 @@
                         </VerticalLayout>
                         <VerticalLayout width="40"></VerticalLayout>
                     </HorizontalLayout>
-                </TreeNode>
+                </TreeNode> -->
             </TreeView>
         </VerticalLayout>
         <HorizontalLayout height="50">

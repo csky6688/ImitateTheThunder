@@ -19,5 +19,7 @@ public:
 	DWORD Array2ARGB(BYTE* array);
 	vector<BYTE> list;
 	vector<DWORD> m_colorList;
+
+	CTreeNodeUI* pNode;
 };
 

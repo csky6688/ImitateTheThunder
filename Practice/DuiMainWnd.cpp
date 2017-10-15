@@ -8,6 +8,7 @@
 
 CDuiMainWnd::CDuiMainWnd()
 {
+	pNode = NULL;
 }
 
 
@@ -61,6 +62,8 @@ void CDuiMainWnd::InitWindow()
 	pElem = (CListContainerElementUI*)builder.Create(L"ListItem.xml");
 
 	pList->Add(pElem);
+
+	pNode = (CTreeNodeUI*)m_PaintManager.FindControl(_T("tree_node_head"));
 
 	ColorInit();
 
@@ -208,15 +211,22 @@ void CDuiMainWnd::Notify(TNotifyUI& msg)
 		}
 		else if (strName == L"addTreeNode")
 		{
-			//CControlUI* pNode = NULL;
+			//CMyListItem* pNode = NULL;
 
-			//pNode = static_cast<CControlUI*>(builder.Create(L"TreeItem.xml"));
+			//CControlUI* pBase = builder.Create(L"TreeItem.xml");
 
-			//pTree->Add(pNode);
+			pNode = (CTreeNodeUI*)m_PaintManager.FindControl(_T("tree_node_head"));
 
-			CMyTreeNode* pNode = (CMyTreeNode*)builder.Create(L"TreeItem.xml");
+			CTreeNodeUI* pItem = new CTreeNodeUI();
 
-			pTree->Add(pNode);
+			memcpy(pItem,pNode,sizeof(*pNode));
+
+
+			pNode->Add(pItem);
+
+			/*CMyTreeNode* pNode = (CMyTreeNode*)builder.Create(L"TreeItem.xml");
+
+			pTree->Add(pNode);*/
 
 		}
 	}

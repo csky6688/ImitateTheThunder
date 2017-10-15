@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 整体布局结构 -->
-<Window size="298,60">
-    <TreeNode name="tree_node_head" height="60" width="298">
+<Window  height="60" width="298">
+    <TreeNode name="tree_node_head">
         <HorizontalLayout height="60" width="298">
             <VerticalLayout width="60">
                 <Control name="itemimage" padding="10,10,10,10" bkimage="image/practice (1).png" />
