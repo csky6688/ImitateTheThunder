@@ -16,7 +16,9 @@ public:
 	virtual CControlUI* CreateControl(LPCTSTR pstrClassName);
 	void ColorInit();
 	void Arr(BYTE* str, int pos, int len);
-	DWORD Array2ARGB(BYTE* array);
+	DWORD Array2ARGB(BYTE* array);	
+	bool OnClickedColorButton(void* msg);
+	bool OnClickedTileItem(void* param);
 	vector<BYTE> list;
 	vector<DWORD> m_colorList;
 

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 整体布局结构 -->
+<Window size="100,195">
+    <!-- 80 135 -->
+    <Container padding="10,30,10,30">
+        <VerticalLayout name="tileitem"  bkcolor="FFEEEEEE">
+            <Control name="itemimage1" bkimage="image/image/practice (1).png" width="80" height="80" />
+            <HorizontalLayout height="10" />
+            <Label name="itemtext1" height="25" text="TileItem"/>
+            <HorizontalLayout />
+        </VerticalLayout>
+    </Container>
+</Window>

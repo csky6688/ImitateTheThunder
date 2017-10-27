@@ -1,37 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 整体布局结构 -->
 <Window size="600,600">
-    <HorizontalLayout bkcolor="FF46B39E">
-        <HorizontalLayout width="400" sepwidth="5" sepimm="true">
-            <TileLayout name="tilelayout" padding="50,50,50,50" childpadding="10" itemsize="80,100">
-                <Control bkcolor="FFDDEEFF" padding="0,10,0,0" />
-                <Control bkcolor="FFDDEEFF" padding="0,10,0,0"/>
-                <Control bkcolor="FFDDEEFF" padding="0,10,0,0"/>
-                <Control bkcolor="FFDDEEFF" padding="0,10,0,0"/>
-                <Control bkcolor="FFDDEEFF" padding="0,10,0,0"/>
-                <Control bkcolor="FFDDEEFF" padding="0,10,0,0"/>
-                <Control bkcolor="FFDDEEFF" padding="0,10,0,0"/>
-                <Control bkcolor="FFDDEEFF" padding="0,10,0,0"/>
-                <Control bkcolor="FFDDEEFF" padding="0,10,0,0"/>
-                <Control bkcolor="FFDDEEFF" padding="0,10,0,0"/>
-            </TileLayout>
-            <!-- <VerticalLayout name="splitline" width="5" bkcolor="FF808080" /> -->
+    <VerticalLayout>
+        <HorizontalLayout bkcolor="FF46B39E" height="400">
+            <HorizontalLayout width="400" sepwidth="5" sepimm="true">
+                <TileLayout name="tilelayout" padding="50,50,50,50" childpadding="10" itemsize="80,100">
+                    <Button bkcolor="FFDDEEFF" padding="0,10,0,0" />
+                    <Button bkcolor="FFDDEEFF" padding="0,10,0,0"/>
+                    <Button bkcolor="FFDDEEFF" padding="0,10,0,0"/>
+                    <Button bkcolor="FFDDEEFF" padding="0,10,0,0"/>
+                    <Button bkcolor="FFDDEEFF" padding="0,10,0,0"/>
+                    <Button bkcolor="FFDDEEFF" padding="0,10,0,0"/>
+                    <Button bkcolor="FFDDEEFF" padding="0,10,0,0"/>
+                    <Button bkcolor="FFDDEEFF" padding="0,10,0,0"/>
+                    <Button bkcolor="FFDDEEFF" padding="0,10,0,0"/>
+                    <Button bkcolor="FFDDEEFF" padding="0,10,0,0"/>
+                </TileLayout>
+                <!-- <VerticalLayout name="splitline" width="5" bkcolor="FF808080" /> -->
+            </HorizontalLayout>
+            <HorizontalLayout >
+                <VerticalLayout name="splitline" width="5" bkcolor="FF808080" />
+                <TileLayout name="tilelayout2" padding="50,50,50,50" childpadding="10" itemsize="80,100">
+                    <Button bkcolor="FFDDEEFF" padding="0,10,0,0" />
+                    <Button bkcolor="FFDDEEFF" padding="0,10,0,0"/>
+                    <Button bkcolor="FFDDEEFF" padding="0,10,0,0"/>
+                    <Button bkcolor="FFDDEEFF" padding="0,10,0,0"/>
+                    <Button bkcolor="FFDDEEFF" padding="0,10,0,0"/>
+                    <Button bkcolor="FFDDEEFF" padding="0,10,0,0"/>
+                    <Button bkcolor="FFDDEEFF" padding="0,10,0,0"/>
+                    <Button bkcolor="FFDDEEFF" padding="0,10,0,0"/>
+                    <Button bkcolor="FFDDEEFF" padding="0,10,0,0"/>
+                    <Button bkcolor="FFDDEEFF" padding="0,10,0,0"/>
+                </TileLayout>
+            </HorizontalLayout>
         </HorizontalLayout>
-        <HorizontalLayout >
-            <VerticalLayout name="splitline" width="5" bkcolor="FF808080" />
-
-             <TileLayout name="tilelayout" padding="50,50,50,50" childpadding="10" itemsize="80,100">
-                <Control bkcolor="FFDDEEFF" height="100" padding="0,10,0,0" />
-                <Control bkcolor="FFDDEEFF" padding="0,10,0,0"/>
-                <Control bkcolor="FFDDEEFF" padding="0,10,0,0"/>
-                <Control bkcolor="FFDDEEFF" padding="0,10,0,0"/>
-                <Control bkcolor="FFDDEEFF" padding="0,10,0,0"/>
-                <Control bkcolor="FFDDEEFF" padding="0,10,0,0"/>
-                <Control bkcolor="FFDDEEFF" padding="0,10,0,0"/>
-                <Control bkcolor="FFDDEEFF" padding="0,10,0,0"/>
-                <Control bkcolor="FFDDEEFF" padding="0,10,0,0"/>
-                <Control bkcolor="FFDDEEFF" padding="0,10,0,0"/>
-            </TileLayout>
+        <HorizontalLayout height="5" bkcolor="FF808080"/>
+        <HorizontalLayout bkcolor="FF46B39E">
+            <TileLayout name="tileLarge" childpadding="10" ></TileLayout>
         </HorizontalLayout>
-    </HorizontalLayout>
+    </VerticalLayout>
 </Window>
