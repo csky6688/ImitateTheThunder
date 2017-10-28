@@ -78,6 +78,20 @@ void CDuiMainWnd::InitWindow()
 	}
 
 
+	CTileLayoutUI* pTileGreen = static_cast<CTileLayoutUI*>(m_PaintManager.FindControl(L"gtile"));
+	for (WORD i = 0; i < 255;i++)
+	{
+		pColor = new CButtonUI();
+		CString color;
+		color.Format(L"FFFF%02xFF", i);
+		LPTSTR pstr = NULL;
+		pColor->SetBkColor(_tcstoul(color, &pstr,16));
+		pTileGreen->Add(pColor);
+
+		pColor->OnNotify += MakeDelegate(this, &CDuiMainWnd::OnClickedGreenColorButton);
+	}
+
+
 	CTileLayoutUI* pTile1 = (CTileLayoutUI*)m_PaintManager.FindControl(L"tilelayout");
 	CTileLayoutUI* pTile2 = (CTileLayoutUI*)m_PaintManager.FindControl(L"tilelayout2");
 
@@ -87,7 +101,6 @@ void CDuiMainWnd::InitWindow()
 
 
 	CDialogBuilder builder2;
-
 	CContainerUI* pTileItem = (CContainerUI*)builder2.Create(L"TileItem.xml", NULL, NULL, &m_PaintManager, NULL);
 
 	CTileLayoutUI* pTileDemo = (CTileLayoutUI*)m_PaintManager.FindControl(L"tileLarge");
@@ -131,6 +144,28 @@ bool CDuiMainWnd::OnClickedColorButton(void* param)
 	return true;
 }
 
+
+bool CDuiMainWnd::OnClickedGreenColorButton(void* param)
+{
+	TNotifyUI* msg = (TNotifyUI*)param;
+
+	if (msg->sType = DUI_MSGTYPE_CLICK)
+	{
+		CButtonUI* pBtn = (CButtonUI*)msg->pSender;
+		DWORD bkcolor1 = pBtn->GetBkColor();
+		CTileLayoutUI* pTile = static_cast<CTileLayoutUI*>(m_PaintManager.FindControl(_T("colortile")));
+
+		for (size_t i = 0; i < m_colorList.size();i++)
+		{
+			CButtonUI* pButton = (CButtonUI*)pTile->GetItemAt(i);
+			DWORD bkcolor2 = pButton->GetBkColor();
+			//DWORD bkcolor = 
+		}
+	}
+
+	return true;
+}
+
 void CDuiMainWnd::ColorInit()
 {
 	BYTE color[4];
@@ -151,25 +186,11 @@ void CDuiMainWnd::ColorInit()
 		}
 	}
 
-	
-	//for (int i = 0; i < 9; i++)
-	/*{
-		list.push_back(0);
-		list.push_back(32);
-		list.push_back(64);
-		list.push_back(96);
-		list.push_back(128);
-		list.push_back(160);
-		list.push_back(192);
-		list.push_back(224);
-		list.push_back(255);
-	}
-
-	int maxLength = 4;
-	BYTE* str = new BYTE[4];
-
-	Arr(str,0,4);*/
 }
+
+//GetRValue;
+
+//GetRValue();
 
 DWORD CDuiMainWnd::Array2ARGB(BYTE* array)
 {

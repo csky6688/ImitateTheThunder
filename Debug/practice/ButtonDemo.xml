@@ -16,11 +16,14 @@
                 <Button name="restore2" width="80" normalimage="image/restore0.png" bkcolor="FF3DDAF2"/>
             </HorizontalLayout>
         </HorizontalLayout>
-    
-        <VerticalLayout height="500" bkcolor="FF297FB8">
-            <VerticalLayout float="true" pos="0,0,510,510">
-                <TileLayout name="colortile"  itemsize="2,2"></TileLayout>
+        <HorizontalLayout height="500" bkcolor="FF297FB8">
+            <VerticalLayout width="510">
+                <TileLayout name="colortile" itemsize="2,2"></TileLayout>
             </VerticalLayout>
-        </VerticalLayout>
+            <VerticalLayout width="10" bkcolor="FFDDDDDD" />
+            <VerticalLayout width="80">
+                <TileLayout name="gtile" itemsize="80,2" />
+            </VerticalLayout>
+        </HorizontalLayout>
     </VerticalLayout>
 </Window>
