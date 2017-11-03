@@ -215,18 +215,18 @@ void CDuiMainWnd::Notify(TNotifyUI& msg)
 
 			//CControlUI* pBase = builder.Create(L"TreeItem.xml");
 
-			pNode = (CTreeNodeUI*)m_PaintManager.FindControl(_T("tree_node_head"));
+			/*pNode = (CTreeNodeUI*)m_PaintManager.FindControl(_T("tree_node_head"));
 
 			CTreeNodeUI* pItem = new CTreeNodeUI();
 
 			memcpy(pItem,pNode,sizeof(*pNode));
 
 
-			pNode->Add(pItem);
+			pNode->Add(pItem);*/
 
-			/*CMyTreeNode* pNode = (CMyTreeNode*)builder.Create(L"TreeItem.xml");
+			CTreeNodeUI* pNode = (CTreeNodeUI*)builder.Create(L"TreeItem.xml", L"TreeNode", NULL, &m_PaintManager, pTree);
 
-			pTree->Add(pNode);*/
+			pTree->Add(pNode);
 
 		}
 	}

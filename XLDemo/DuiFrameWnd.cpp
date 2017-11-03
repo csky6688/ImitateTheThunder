@@ -55,6 +55,15 @@ void CDuiFrameWnd::InitWindow()
 
 	pList->Add(pElem);
 	pList->Add(pElem2);
+
+	CButtonUI* pLogin = (CButtonUI*)m_PaintManager.FindControl(L"loginGif");
+	pLogin->OnNotify += MakeDelegate(this, &OnLogin);
+}
+
+
+bool CDuiFrameWnd::OnLogin(void* lParam)
+{
+	::MessageBox(NULL,L"123",L"2",MB_OK);
 }
 
 CControlUI* CDuiFrameWnd::CreateControl(LPCTSTR pstrClassName)

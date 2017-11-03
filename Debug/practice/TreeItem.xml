@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 整体布局结构 -->
 <Window  height="60" width="298">
-    <TreeNode name="tree_node_head">
+    <TreeNode >
         <HorizontalLayout height="60" width="298">
-            <VerticalLayout width="60">
-                <Control name="itemimage" padding="10,10,10,10" bkimage="image/practice (1).png" />
+            <!-- <VerticalLayout width="60">
+                <Control name="itemimage" padding="10,10,10,10" bkimage="image/h1.png" />
             </VerticalLayout>
             <VerticalLayout>
                 <Text name="nick" text="nickname" padding="2,7,10,3" font="0"/>
                 <Text name="content" text="text" endellipsis="true" padding="2,0,10,10" font="1" />
             </VerticalLayout>
-            <VerticalLayout width="40"></VerticalLayout>
+            <VerticalLayout width="40"></VerticalLayout> -->
         </HorizontalLayout>
     </TreeNode>
 </Window>
