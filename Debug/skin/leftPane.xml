@@ -6,9 +6,9 @@
         <VerticalLayout height="90">
             <HorizontalLayout height="70" padding="10,10,25,10">
                 <Control name="headGif" width="70" bkimage="img/head.png" padding="10,0,10,0" />
-                <VerticalLayout width="100" padding="10,0,0,0">
+                <VerticalLayout width="100" padding="5,0,0,0">
                     <HorizontalLayout />
-                    <Label name="loginGif" height="20" text="点击登录" />
+                    <Button name="loginGif" height="20" text="点击登录" align="left" />
                     <HorizontalLayout />
                 </VerticalLayout>
             </HorizontalLayout>

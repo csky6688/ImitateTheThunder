@@ -33,6 +33,12 @@
     <ClInclude Include="DuiFrameWnd.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\Practice\ARGB.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -42,6 +48,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="DuiFrameWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginWnd.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

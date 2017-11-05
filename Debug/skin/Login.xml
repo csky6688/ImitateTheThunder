@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window size="325,460" caption="0,0,0,460">
+  <VerticalLayout bkcolor="#FF374048">
+    <HorizontalLayout height="30">
+      <Label text="登录" width="50" padding="15,15,0,0" align="left" />
+      <VerticalLayout />
+      <HorizontalLayout width="78"  padding="0,10,0,0">
+        <Button name="loginset" bkimage="login/set.png" width="39" />
+        <Button name="closebtn" bkimage="login/close.png" width="39" />
+      </HorizontalLayout>
+    </HorizontalLayout>
+  </VerticalLayout>
+</Window>

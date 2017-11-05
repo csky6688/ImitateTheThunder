@@ -14,5 +14,6 @@ public:
 	virtual void InitWindow();
 
 	virtual CControlUI* CreateControl(LPCTSTR pstrClassName);
+	bool OnClickedLogin(void* pParam);
 };
 
