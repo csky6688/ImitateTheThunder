@@ -1,17 +1,5 @@
 #pragma once
 
-#define GetRValue(rgb)      (LOBYTE(rgb))
-#define GetGValue(rgb)      (LOBYTE(((WORD)(rgb)) >> 8))
-#define GetBValue(rgb)      (LOBYTE((rgb)>>16))
-
-
-#define GetAValueOfARGB(argb) (LOBYTE(argb))
-#define GetRValueOfARGB(argb) (LOBYTE(((WORD)(argb)) >> 8)) 
-#define GetGValueOfARGB(argb) 
-#define GetBValueOfARGB(argb)
-
-
-
 
 
 class CDuiMainWnd :public WindowImplBase

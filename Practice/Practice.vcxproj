@@ -79,6 +79,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ARGB.h" />
     <ClInclude Include="DuiMainWnd.h" />
     <ClInclude Include="MyListItem.h" />
     <ClInclude Include="Practice.h" />
