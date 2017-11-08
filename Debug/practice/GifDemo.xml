@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 整体布局结构 -->
+<Window size="600,600">
+    <VerticalLayout bkcolor="FF46B39E">
+        <GifAnim bkimage="gif/bk.gif" />
+        <VerticalLayout float="true" pos="0,0,200,400" bkcolor="FF46B39E" bkcolor2="FFFFB39E"/>
+        <VerticalLayout float="true" pos="400,200,600,600" bkcolor="FFFFB39E" bkcolor2="FF46B39E"/>
+    </VerticalLayout>
+</Window>

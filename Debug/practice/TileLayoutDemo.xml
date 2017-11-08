@@ -36,7 +36,16 @@
         </HorizontalLayout>
         <HorizontalLayout height="5" bkcolor="FF808080"/>
         <HorizontalLayout bkcolor="FF46B39E">
-            <TileLayout name="tileLarge" childpadding="10" ></TileLayout>
+            <TileLayout name="tileLarge" childpadding="10">
+                <Container width="100" height="195">
+                    <VerticalLayout name="tileitem" padding="10,30,10,30" height="195" width="100" bkcolor="FFFF0000">
+                        <Button name="itemimage144" bkimage="file='image/practice (1).png'" width="80" height="80" />
+                        <!-- <HorizontalLayout height="10" bkcolor="FFFF0000"/> -->
+                        <Button float="true" pos="0,80,100,100" name="itemtext144" height="25" bkcolor="FF00FF00" text="TileItem"/>
+                        <HorizontalLayout bkcolor="FF00FFFF" />
+                    </VerticalLayout>
+                </Container>
+            </TileLayout>
         </HorizontalLayout>
     </VerticalLayout>
 </Window>

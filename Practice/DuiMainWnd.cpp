@@ -1,9 +1,12 @@
 
+#pragma once
+
 #include "stdafx.h"
 #include "DuiMainWnd.h"
 
 #include "MyListItem.h"
 
+#include "ARGB.h"
 //#include "../Ext/UIColorSkin.h"
 
 CDuiMainWnd::CDuiMainWnd()
@@ -85,10 +88,10 @@ void CDuiMainWnd::InitWindow()
 	for (WORD i = 0; i < 255;i++)
 	{
 		pColor = new CButtonUI();
-		CString color;
+		/*CString color;
 		color.Format(L"FFFF%02xFF", i);
-		LPTSTR pstr = NULL;
-		pColor->SetBkColor(_tcstoul(color, &pstr,16));
+		LPTSTR pstr = NULL;*/
+		pColor->SetBkColor(ARGB(255,255,i,255));
 		pTileGreen->Add(pColor);
 
 		pColor->OnNotify += MakeDelegate(this, &CDuiMainWnd::OnClickedGreenColorButton);
@@ -103,19 +106,17 @@ void CDuiMainWnd::InitWindow()
 	pTile1->OnNotify += MakeDelegate(this,&CDuiMainWnd::OnClickedTileItem);
 
 
-	CDialogBuilder builder2;
+	/*CDialogBuilder builder2;
 	CContainerUI* pTileItem = (CContainerUI*)builder2.Create(L"TileItem.xml", NULL, NULL, &m_PaintManager, NULL);
 
 	CTileLayoutUI* pTileDemo = (CTileLayoutUI*)m_PaintManager.FindControl(L"tileLarge");
 	if (pTileDemo && pTileItem)
 		pTileDemo->Add(pTileItem);
 	else
-		::MessageBox(NULL,L"TileError",NULL,NULL);
+		::MessageBox(NULL,L"TileError",NULL,NULL);*/
 
 }
 
-#define RGB(r,g,b)          ((COLORREF)(((BYTE)(r)|((WORD)((BYTE)(g))<<8))|(((DWORD)(BYTE)(b))<<16)))
-#define ARGB(a,r,g,b)          ((COLORREF)(((BYTE)(a)|((WORD)((BYTE)(r))<<8))|(((DWORD)(BYTE)(g))<<16)|(((DWORD)(BYTE)(g))<<24)))
 
 
 bool CDuiMainWnd::OnClickedTileItem(void* param)
@@ -130,7 +131,7 @@ bool CDuiMainWnd::OnClickedTileItem(void* param)
 bool CDuiMainWnd::OnClickedColorButton(void* param)
 {
 	TNotifyUI* msg = (TNotifyUI*)param;
-
+	CTileLayoutUI* pTile = static_cast<CTileLayoutUI*>(m_PaintManager.FindControl(_T("gtile")));
 	if (msg->sType = DUI_MSGTYPE_CLICK)
 	{
 		CButtonUI* pBtn = (CButtonUI*)msg->pSender;
@@ -142,6 +143,13 @@ bool CDuiMainWnd::OnClickedColorButton(void* param)
 		m_PaintManager.FindControl(L"min")->SetBkColor(bkcolor);
 		m_PaintManager.FindControl(L"max")->SetBkColor(bkcolor);
 		m_PaintManager.FindControl(L"res")->SetBkColor(bkcolor);
+
+
+		for (int i = 0; i < 255;i++)
+		{
+			CButtonUI* pButton = (CButtonUI*)pTile->GetItemAt(i);
+			pButton->SetBkColor(ARGB(255, GetRValueOfARGB(bkcolor), i, GetBValueOfARGB(bkcolor)));
+		}
 	}
 
 	return true;
@@ -151,18 +159,18 @@ bool CDuiMainWnd::OnClickedColorButton(void* param)
 bool CDuiMainWnd::OnClickedGreenColorButton(void* param)
 {
 	TNotifyUI* msg = (TNotifyUI*)param;
-
+	CTileLayoutUI* pTile = static_cast<CTileLayoutUI*>(m_PaintManager.FindControl(_T("colortile")));
 	if (msg->sType = DUI_MSGTYPE_CLICK)
 	{
 		CButtonUI* pBtn = (CButtonUI*)msg->pSender;
-		DWORD bkcolor1 = pBtn->GetBkColor();
-		CTileLayoutUI* pTile = static_cast<CTileLayoutUI*>(m_PaintManager.FindControl(_T("colortile")));
-
+		DWORD gColor = pBtn->GetBkColor();
+		
 		for (size_t i = 0; i < m_colorList.size();i++)
 		{
 			CButtonUI* pButton = (CButtonUI*)pTile->GetItemAt(i);
 			DWORD bkcolor2 = pButton->GetBkColor();
-			//DWORD bkcolor = 
+			DWORD bkcolor = SetGValueOfARGB(bkcolor2, GetGValueOfARGB(gColor));
+			pButton->SetBkColor(bkcolor);
 		}
 	}
 
