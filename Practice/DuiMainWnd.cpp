@@ -48,6 +48,9 @@ void CDuiMainWnd::InitWindow()
 	pOpt = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("optList")));
 	if (pOpt != NULL)
 		pOpt->SetFont(0);
+	pOpt = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("optGif")));
+	if (pOpt != NULL)
+		pOpt->SetFont(0);
 
 	CListUI* pList = (CListUI*)m_PaintManager.FindControl(_T("list"));
 	if (pList == NULL)
@@ -66,48 +69,131 @@ void CDuiMainWnd::InitWindow()
 	pNode = (CTreeNodeUI*)m_PaintManager.FindControl(_T("tree_node_head"));
 
 	ColorInit();
-
-
 	CTileLayoutUI* pTile = static_cast<CTileLayoutUI*>(m_PaintManager.FindControl(_T("colortile")));
-
 	CButtonUI* pColor = NULL; 
-	//CControlUI
-
 	for (size_t i = 0; i < m_colorList.size();i++)
 	{
 		pColor = new CButtonUI();
 		pColor->SetBkColor(m_colorList[i]);
 		pTile->Add(pColor);
+
+		pColor->OnNotify += MakeDelegate(this,&CDuiMainWnd::OnClickedColorButton);
 	}
 
-}
 
-
-void CDuiMainWnd::ColorInit()
-{
-	//0 32 64 96 128 160 192 224 256
-	
-	//for (int i = 0; i < 9; i++)
+	CTileLayoutUI* pTileGreen = static_cast<CTileLayoutUI*>(m_PaintManager.FindControl(L"gtile"));
+	for (WORD i = 0; i < 255;i++)
 	{
-		list.push_back(0);
-		list.push_back(32);
-		list.push_back(64);
-		list.push_back(96);
-		list.push_back(128);
-		list.push_back(160);
-		list.push_back(192);
-		list.push_back(224);
-		list.push_back(255);
+		pColor = new CButtonUI();
+		CString color;
+		color.Format(L"FFFF%02xFF", i);
+		LPTSTR pstr = NULL;
+		pColor->SetBkColor(_tcstoul(color, &pstr,16));
+		pTileGreen->Add(pColor);
+
+		pColor->OnNotify += MakeDelegate(this, &CDuiMainWnd::OnClickedGreenColorButton);
 	}
 
-	int maxLength = 4;
-	BYTE* str = new BYTE[4];
 
-	Arr(str,0,4);
+	CTileLayoutUI* pTile1 = (CTileLayoutUI*)m_PaintManager.FindControl(L"tilelayout");
+	CTileLayoutUI* pTile2 = (CTileLayoutUI*)m_PaintManager.FindControl(L"tilelayout2");
+
+	//pTile1->gItem
+
+	pTile1->OnNotify += MakeDelegate(this,&CDuiMainWnd::OnClickedTileItem);
+
+
+	CDialogBuilder builder2;
+	CContainerUI* pTileItem = (CContainerUI*)builder2.Create(L"TileItem.xml", NULL, NULL, &m_PaintManager, NULL);
+
+	CTileLayoutUI* pTileDemo = (CTileLayoutUI*)m_PaintManager.FindControl(L"tileLarge");
+	if (pTileDemo && pTileItem)
+		pTileDemo->Add(pTileItem);
+	else
+		::MessageBox(NULL,L"TileError",NULL,NULL);
+
 }
 
 #define RGB(r,g,b)          ((COLORREF)(((BYTE)(r)|((WORD)((BYTE)(g))<<8))|(((DWORD)(BYTE)(b))<<16)))
 #define ARGB(a,r,g,b)          ((COLORREF)(((BYTE)(a)|((WORD)((BYTE)(r))<<8))|(((DWORD)(BYTE)(g))<<16)|(((DWORD)(BYTE)(g))<<24)))
+
+
+bool CDuiMainWnd::OnClickedTileItem(void* param)
+{
+	TNotifyUI* msg = (TNotifyUI*)param;
+
+	::MessageBox(NULL,L"Tile",NULL,NULL);
+
+	return true;
+}
+
+bool CDuiMainWnd::OnClickedColorButton(void* param)
+{
+	TNotifyUI* msg = (TNotifyUI*)param;
+
+	if (msg->sType = DUI_MSGTYPE_CLICK)
+	{
+		CButtonUI* pBtn = (CButtonUI*)msg->pSender;
+		DWORD bkcolor = pBtn->GetBkColor();
+		m_PaintManager.FindControl(L"min2")->SetBkColor(bkcolor);
+		m_PaintManager.FindControl(L"max2")->SetBkColor(bkcolor);
+		m_PaintManager.FindControl(L"restore2")->SetBkColor(bkcolor);
+
+		m_PaintManager.FindControl(L"min")->SetBkColor(bkcolor);
+		m_PaintManager.FindControl(L"max")->SetBkColor(bkcolor);
+		m_PaintManager.FindControl(L"res")->SetBkColor(bkcolor);
+	}
+
+	return true;
+}
+
+
+bool CDuiMainWnd::OnClickedGreenColorButton(void* param)
+{
+	TNotifyUI* msg = (TNotifyUI*)param;
+
+	if (msg->sType = DUI_MSGTYPE_CLICK)
+	{
+		CButtonUI* pBtn = (CButtonUI*)msg->pSender;
+		DWORD bkcolor1 = pBtn->GetBkColor();
+		CTileLayoutUI* pTile = static_cast<CTileLayoutUI*>(m_PaintManager.FindControl(_T("colortile")));
+
+		for (size_t i = 0; i < m_colorList.size();i++)
+		{
+			CButtonUI* pButton = (CButtonUI*)pTile->GetItemAt(i);
+			DWORD bkcolor2 = pButton->GetBkColor();
+			//DWORD bkcolor = 
+		}
+	}
+
+	return true;
+}
+
+void CDuiMainWnd::ColorInit()
+{
+	BYTE color[4];
+	memset(color,0,4);
+	color[0] = 0xff;
+	color[2] = 100;
+	for (int i = 0; i < 255;i++)
+	{
+		color[1] = i;
+		for (int j = 0; j < 255;j++)
+		{
+			color[3] = j;
+
+			CString text;
+			text.Format(L"%02x%02x%02x%02x", color[0], color[1], color[2], color[3]);
+			LPTSTR pstr = NULL;
+			m_colorList.push_back(_tcstoul(text, &pstr, 16));
+		}
+	}
+
+}
+
+//GetRValue;
+
+//GetRValue();
 
 DWORD CDuiMainWnd::Array2ARGB(BYTE* array)
 {
@@ -172,9 +258,26 @@ void CDuiMainWnd::Notify(TNotifyUI& msg)
 			pUI->SelectItem(1);
 		else if (strName == L"optList")
 			pUI->SelectItem(2);
+		else if (strName == L"optGif")
+			pUI->SelectItem(3);
+
 	}
 	else if (msg.sType == DUI_MSGTYPE_CLICK)
 	{
+		
+		if (msg.pSender->GetParent()->GetName() == L"tilelayout")
+		{
+			CTileLayoutUI* pTile = (CTileLayoutUI*)m_PaintManager.FindControl(L"tilelayout");
+			//::MessageBox(NULL,L"TileItem",L"Tile",NULL);
+
+			CButtonUI* pButton = (CButtonUI*)msg.pSender;
+			int index = pTile->GetItemIndex(msg.pSender);
+			CDuiString text;
+			text.Format(L"%d", index);
+			pButton->SetText(text);
+			pButton->SetFont(0);
+			//return;
+		}
 		CDuiString strName = msg.pSender->GetName();
 		CListUI* pList = (CListUI*)m_PaintManager.FindControl(_T("list"));
 		CTreeViewUI* pTree = (CTreeViewUI*)m_PaintManager.FindControl(_T("tree"));
@@ -230,7 +333,37 @@ void CDuiMainWnd::Notify(TNotifyUI& msg)
 
 		}
 	}
+
+	
+	else if (msg.sType == DUI_MSGTYPE_ITEMCLICK)
+	{
+		CListUI* pList = (CListUI*)m_PaintManager.FindControl(_T("list"));
+		/*int nIndex = pList->GetCurSel();
+		pList->GetSel
+		CString text;
+		text.Format(L"%d", nIndex);
+		::MessageBox(NULL, text, L"2", MB_OK);*/
+		pList->OnNotify += MakeDelegate(this, &CDuiMainWnd::OnClickedList);
+
+	}
+
 	
 
 	__super::Notify(msg);
+}
+
+
+
+bool CDuiMainWnd::OnClickedList(void* param)
+{
+	TNotifyUI* msg = (TNotifyUI*)param;
+	CListUI* pList = (CListUI*)m_PaintManager.FindControl(_T("list"));
+	if (msg->sType = DUI_MSGTYPE_ITEMSELECT)
+	{
+		int nIndex = pList->GetCurSel();
+		CString text;
+		text.Format(L"%d", nIndex);
+		::MessageBox(NULL, text, L"2", MB_OK);
+	}
+	return true;
 }

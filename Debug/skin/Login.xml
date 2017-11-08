@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <!-- 整体布局结构 -->
 <Window size="200,300" caption="0,0,0,300" >
-    <HorizontalLayout>
+    <HorizontalLayout bkcolor="FFDDDDDD">
        <Button name="close" text="关闭" />
     </HorizontalLayout>
 </Window>

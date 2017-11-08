@@ -7,6 +7,7 @@
             <ChildLayout xmlfile="ButtonDemo.xml" />
             <ChildLayout xmlfile="TileLayoutDemo.xml" />
             <ChildLayout xmlfile="ListDemo.xml" />
+            <ChildLayout xmlfile="GifDemo.xml" />
         </TabLayout>
     </VerticalLayout>
 </Window>
