@@ -23,6 +23,7 @@ public:
 	bool OnClickedColorButton(void* msg);
 	bool OnClickedTileItem(void* param);
 	bool OnClickedGreenColorButton(void* param);
+	bool OnClickedList(void* param);
 	vector<BYTE> list;
 	vector<DWORD> m_colorList;
 

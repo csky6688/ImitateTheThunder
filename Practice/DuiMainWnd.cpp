@@ -51,6 +51,9 @@ void CDuiMainWnd::InitWindow()
 	pOpt = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("optList")));
 	if (pOpt != NULL)
 		pOpt->SetFont(0);
+	pOpt = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("optGif")));
+	if (pOpt != NULL)
+		pOpt->SetFont(0);
 
 	CListUI* pList = (CListUI*)m_PaintManager.FindControl(_T("list"));
 	if (pList == NULL)
@@ -263,9 +266,13 @@ void CDuiMainWnd::Notify(TNotifyUI& msg)
 			pUI->SelectItem(1);
 		else if (strName == L"optList")
 			pUI->SelectItem(2);
+		else if (strName == L"optGif")
+			pUI->SelectItem(3);
+
 	}
 	else if (msg.sType == DUI_MSGTYPE_CLICK)
 	{
+		
 		if (msg.pSender->GetParent()->GetName() == L"tilelayout")
 		{
 			CTileLayoutUI* pTile = (CTileLayoutUI*)m_PaintManager.FindControl(L"tilelayout");
@@ -319,22 +326,52 @@ void CDuiMainWnd::Notify(TNotifyUI& msg)
 
 			//CControlUI* pBase = builder.Create(L"TreeItem.xml");
 
-			pNode = (CTreeNodeUI*)m_PaintManager.FindControl(_T("tree_node_head"));
+			/*pNode = (CTreeNodeUI*)m_PaintManager.FindControl(_T("tree_node_head"));
 
 			CTreeNodeUI* pItem = new CTreeNodeUI();
 
 			memcpy(pItem,pNode,sizeof(*pNode));
 
 
-			pNode->Add(pItem);
+			pNode->Add(pItem);*/
 
-			/*CMyTreeNode* pNode = (CMyTreeNode*)builder.Create(L"TreeItem.xml");
+			CTreeNodeUI* pNode = (CTreeNodeUI*)builder.Create(L"TreeItem.xml", L"TreeNode", NULL, &m_PaintManager, pTree);
 
-			pTree->Add(pNode);*/
+			pTree->Add(pNode);
 
 		}
 	}
+
+	
+	else if (msg.sType == DUI_MSGTYPE_ITEMCLICK)
+	{
+		CListUI* pList = (CListUI*)m_PaintManager.FindControl(_T("list"));
+		/*int nIndex = pList->GetCurSel();
+		pList->GetSel
+		CString text;
+		text.Format(L"%d", nIndex);
+		::MessageBox(NULL, text, L"2", MB_OK);*/
+		pList->OnNotify += MakeDelegate(this, &CDuiMainWnd::OnClickedList);
+
+	}
+
 	
 
 	__super::Notify(msg);
+}
+
+
+
+bool CDuiMainWnd::OnClickedList(void* param)
+{
+	TNotifyUI* msg = (TNotifyUI*)param;
+	CListUI* pList = (CListUI*)m_PaintManager.FindControl(_T("list"));
+	if (msg->sType = DUI_MSGTYPE_ITEMSELECT)
+	{
+		int nIndex = pList->GetCurSel();
+		CString text;
+		text.Format(L"%d", nIndex);
+		::MessageBox(NULL, text, L"2", MB_OK);
+	}
+	return true;
 }

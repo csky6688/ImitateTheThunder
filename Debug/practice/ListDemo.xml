@@ -3,13 +3,13 @@
 <Window size="600,600">
     <HorizontalLayout>
         <VerticalLayout width="298" bkcolor="FF56998E">
-            <!-- <ChildLayout xmlfile="ListPractice.xml" /> -->
-             <Include source="ListPractice.xml" />
+            <ChildLayout xmlfile="ListPractice.xml" /> 
+             <!-- <Include source="ListPractice.xml" /> -->
         </VerticalLayout>
         <VerticalLayout width="2" />
         <VerticalLayout width="298" bkcolor="EE46B39E">
-            <!-- <ChildLayout xmlfile="TreePractice.xml" /> -->
-             <Include source="TreePractice.xml" />
+            <ChildLayout xmlfile="TreePractice.xml" />
+             <!-- <Include source="TreePractice.xml" /> -->
         </VerticalLayout>
     </HorizontalLayout>
 </Window>

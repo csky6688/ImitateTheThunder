@@ -21,6 +21,11 @@
                     <Option name="optList" text="List" width="200" group="demo" align="center" />
                 </HorizontalLayout>
             </TreeNode>
+            <TreeNode name="gifdemo" height="50" width="200">
+                <HorizontalLayout width="200" height="50">
+                    <Option name="optGif" text="Gif" width="200" group="demo" align="center" />
+                </HorizontalLayout>
+            </TreeNode>
         </TreeView>
         <HorizontalLayout />
         <HorizontalLayout height="31">

@@ -3,7 +3,7 @@
 
 #include "resource.h"
 
-#include "LoginWnd.h"
+#include "LoginDlg.h"
 
 CDuiFrameWnd::CDuiFrameWnd()
 {
@@ -57,7 +57,27 @@ void CDuiFrameWnd::InitWindow()
 	pList->Add(pElem2);
 
 	CButtonUI* pLogin = (CButtonUI*)m_PaintManager.FindControl(L"loginGif");
-	pLogin->OnNotify += MakeDelegate(this, &CDuiFrameWnd::OnClickedLogin);
+	pLogin->OnNotify += MakeDelegate(this, &CDuiFrameWnd::OnLogin);
+}
+
+
+bool CDuiFrameWnd::OnLogin(void* lParam)
+{
+
+	TNotifyUI* msg = (TNotifyUI*)lParam;
+
+	if (msg->sType == DUI_MSGTYPE_CLICK)
+	{
+		//::MessageBox(NULL, L"123", L"2", MB_OK);
+
+		CLoginDlg* pLogin = new CLoginDlg();
+		pLogin->Create(m_hWnd, L"Login", UI_WNDSTYLE_DIALOG, 0, 0, 0, 0, 0, NULL);
+		pLogin->CenterWindow();
+		pLogin->ShowModal();
+	}
+	
+
+	return true;
 }
 
 CControlUI* CDuiFrameWnd::CreateControl(LPCTSTR pstrClassName)
@@ -85,21 +105,5 @@ CControlUI* CDuiFrameWnd::CreateControl(LPCTSTR pstrClassName)
 	return pUI;
 
 	//return NULL;
-}
-
-
-bool CDuiFrameWnd::OnClickedLogin(void* pParam)
-{
-	TNotifyUI* msg = (TNotifyUI*)pParam;
-	if (msg->sType == DUI_MSGTYPE_CLICK)
-	{
-		CLoginWnd* wnd = new CLoginWnd;
-		wnd->Create(m_hWnd, L"Login", UI_WNDSTYLE_DIALOG, 0, 0, 0, 0, 0, NULL);
-		wnd->CenterWindow();
-		wnd->ShowModal();
-	}
-
-
-	return true;
 }
 
