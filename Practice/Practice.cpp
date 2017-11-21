@@ -17,21 +17,20 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 {
 
 
-	/*DWORD color = RGB(255,255,255);
-	color = SetRValue(color, 1);
-	SetGValue(color, 2);
-	SetBValue(color, 3);
-	BYTE r = GetRValue(color);
-	BYTE g = GetGValue(color);
-	BYTE b = GetBValue(color);*/
+	DWORD color = RGB(123,234,135);
+	DWORD argb = A_RGB(0xff, color);
+	COLORREF clr = GetRGB(argb);
+	BYTE r = GetRValue(clr);
+	BYTE g = GetGValue(clr);
+	BYTE b = GetBValue(clr);
 
-	DWORD color = ARGB(255,255,255,255);
+	/*DWORD color = ARGB(255,255,255,255);
 	color = SetAValueOfARGB(color, 0);
 	color = SetBValueOfARGB(color, 0);
 	BYTE a = GetAValueOfARGB(color);
 	BYTE r = GetRValueOfARGB(color);
 	BYTE g = GetGValueOfARGB(color);
-	BYTE b = GetBValueOfARGB(color);
+	BYTE b = GetBValueOfARGB(color);*/
 
 
 	//int a = 2;

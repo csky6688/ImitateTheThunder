@@ -3,7 +3,11 @@
 <Window size="600,600">
     <VerticalLayout bkcolor="FF46B39E">
         <GifAnim bkimage="gif/bk.gif" />
-        <VerticalLayout float="true" pos="0,0,200,400" bkcolor="FF46B39E" bkcolor2="FFFFB39E"/>
-        <VerticalLayout float="true" pos="400,200,600,600" bkcolor="FFFFB39E" bkcolor2="FF46B39E"/>
-    </VerticalLayout>
+        <VerticalLayout float="true" pos="0,0,200,400" bkcolor="FF46B39E" bkcolor2="FFFFB39E">
+            <Combo name="combodemo" float="true" pos="30,30,0,0" width="139" height="30" normalimage="file='SysBtn/ComboBox/Combo_nor.bmp'" hotimage="file='SysBtn/ComboBox/Combo_over.bmp' " pushedimage="file='SysBtn/ComboBox/Combo_over.bmp' ">
+                <ListLabelElement text="张三" selected="true" />
+                <ListLabelElement text="李四" />
+            </Combo>
+        </VerticalLayout>
+        <VerticalLayout float="true" pos="400,200,600,600" bkcolor="FFFFB39E" bkcolor2="FF46B39E"/></VerticalLayout>
 </Window>
