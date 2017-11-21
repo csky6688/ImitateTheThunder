@@ -2,7 +2,7 @@
 
 #### 目标结果:
 
-![迅雷精简版](./Debug/img/final.png)
+![迅雷精简版](./Debug/skin/process/final.png)
 
 #### 当前进度:
-![当前进度](./Debug/process/1.png)
+![当前进度](./Debug/skin/process/1.png)
