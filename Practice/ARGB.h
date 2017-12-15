@@ -9,6 +9,7 @@
 
 #define RGB(r,g,b)          ((COLORREF)(((BYTE)(r)|((WORD)((BYTE)(g))<<8))|(((DWORD)(BYTE)(b))<<16)))
 
+#define GetRGB(argb)        (DWORD)(argb << 8) >> 8
 
 #define GetBValueOfARGB(argb) (LOBYTE(argb))
 #define GetGValueOfARGB(argb) (LOBYTE(((WORD)(argb)) >> 8)) 
@@ -17,6 +18,7 @@
 
 
 #define ARGB(a,r,g,b)  (DWORD)a << 24 | RGB(b,g,r)
+#define A_RGB(a,rgb)   (DWORD)a << 24 | rgb
 
 
 #define SetRValue(rgb,r)  RGB(r,GetGValue(rgb),GetBValue(rgb))

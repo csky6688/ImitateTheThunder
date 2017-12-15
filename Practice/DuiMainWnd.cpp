@@ -55,6 +55,7 @@ void CDuiMainWnd::InitWindow()
 	COptionUI* pOpt = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("optButton")));
 	if (pOpt != NULL)
 		pOpt->SetFont(0);
+	
 	pOpt = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("optTile")));
 	if (pOpt != NULL)
 		pOpt->SetFont(0);
@@ -104,6 +105,8 @@ void CDuiMainWnd::InitWindow()
 		pColor->SetBkColor(ARGB(255,255,i,255));
 		pTileGreen->Add(pColor);
 
+		//pColor->SetTextColor()
+
 		pColor->OnNotify += MakeDelegate(this, &CDuiMainWnd::OnClickedGreenColorButton);
 	}
 
@@ -124,6 +127,11 @@ void CDuiMainWnd::InitWindow()
 		pTileDemo->Add(pTileItem);
 	else
 		::MessageBox(NULL,L"TileError",NULL,NULL);*/
+
+	CComboUI* pCombo = (CComboUI*)m_PaintManager.FindControl(L"combodemo");
+	pCombo->SetHotItemTextColor(0xFFFFFF00);
+	pCombo->SetItemTextColor(0xFFFF00FF);
+	pCombo->SetSelectedItemTextColor(0xFF00FFFF);
 
 }
 
