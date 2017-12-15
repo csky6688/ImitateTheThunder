@@ -57,11 +57,11 @@ void CDuiFrameWnd::InitWindow()
 	pList->Add(pElem2);
 
 	CButtonUI* pLogin = (CButtonUI*)m_PaintManager.FindControl(L"loginGif");
-	pLogin->OnNotify += MakeDelegate(this, &CDuiFrameWnd::OnLogin);
+	pLogin->OnNotify += MakeDelegate(this, &CDuiFrameWnd::OnClickedLogin);
 }
 
 
-bool CDuiFrameWnd::OnLogin(void* lParam)
+bool CDuiFrameWnd::OnClickedLogin(void* lParam)
 {
 
 	TNotifyUI* msg = (TNotifyUI*)lParam;

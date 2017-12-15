@@ -36,6 +36,16 @@ DuiLib::CDuiString CDuiMainWnd::GetSkinFolder()
 	return L"practice";
 }
 
+static char* TransferTxt(CString strTxt, DWORD& dwTransferBuffSize)
+{
+	dwTransferBuffSize = WideCharToMultiByte(CP_OEMCP, NULL, strTxt, -1, NULL, 0, NULL, FALSE);
+	char* pNewBuff = new char[dwTransferBuffSize];
+	memset(pNewBuff, 0, dwTransferBuffSize);
+	WideCharToMultiByte(CP_OEMCP, NULL, strTxt, -1, pNewBuff, dwTransferBuffSize, NULL, FALSE);
+	return pNewBuff;
+}
+
+//#include <locale.h>
 void CDuiMainWnd::InitWindow()
 {
 	srand((unsigned int)(time(NULL)));

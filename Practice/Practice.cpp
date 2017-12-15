@@ -25,13 +25,13 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 	BYTE g = GetGValue(color);
 	BYTE b = GetBValue(color);*/
 
-	DWORD color = ARGB(255,255,255,255);
-	color = SetAValueOfARGB(color, 0);
-	color = SetBValueOfARGB(color, 0);
-	BYTE a = GetAValueOfARGB(color);
-	BYTE r = GetRValueOfARGB(color);
-	BYTE g = GetGValueOfARGB(color);
-	BYTE b = GetBValueOfARGB(color);
+	//DWORD color = ARGB(255,255,255,255);
+	//color = SetAValueOfARGB(color, 0);
+	//color = SetBValueOfARGB(color, 0);
+	//BYTE a = GetAValueOfARGB(color);
+	//BYTE r = GetRValueOfARGB(color);
+	//BYTE g = GetGValueOfARGB(color);
+	//BYTE b = GetBValueOfARGB(color);
 
 
 	//int a = 2;
