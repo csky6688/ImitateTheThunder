@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window size="752,450">
+  <VerticalLayout bkcolor="FFFFFFFF">
+    <TabLayout name="tablayout">
+      <List name="itemlist" header="hidden"></List>
+    </TabLayout>
+  </VerticalLayout>
+</Window>
