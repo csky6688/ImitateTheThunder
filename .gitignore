@@ -27,6 +27,10 @@ bld/
 *.idb
 *.exp
 
+*/v15
+
+v15/
+
 # Roslyn cache directories
 *.ide/
 

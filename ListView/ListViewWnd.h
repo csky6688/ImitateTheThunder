@@ -9,6 +9,7 @@ public:
 	virtual CDuiString GetSkinFile();
 	virtual CDuiString GetSkinFolder();
 
+	virtual CControlUI* CreateControl(LPCTSTR pstrClass);
 	virtual void InitWindow();
 
 };
