@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window size="800,100">
+    <ListContainerElement name="my_list_node" height="100" minheight="100">
+        <HorizontalLayout inset="20,20,20,20">
+            <Text name="direction" width = "50" text="Send" />
+            <Text name="data" width="500" text="testttttttttttttttttttt" />
+            <Text name="asc" width="250" text="asccccccc" />
+        </HorizontalLayout>
+    </ListContainerElement>
+</Window>
