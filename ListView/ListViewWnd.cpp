@@ -59,6 +59,7 @@ void CListViewWnd::InitWindow()
 	{
 		CDialogBuilder builder;
 		CListItemUI* pItem = (CListItemUI*)builder.Create(L"ListItemLayout.xml");
+		pItem->SetOwner((CControlUI*)this);
 		/*CTabLayoutUI* pTabUI = (CTabLayoutUI*)pItem->FindSubControl(L"tab");
 		pTabUI->SelectItem(0);*/
 		pList->Add(pItem);
