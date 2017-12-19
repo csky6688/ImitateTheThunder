@@ -19,6 +19,5 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 
 	duiFrame.CenterWindow();
 	duiFrame.ShowModal();
-
 }
 
