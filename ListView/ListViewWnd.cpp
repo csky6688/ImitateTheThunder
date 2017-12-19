@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "ListViewWnd.h"
+//#include <afx.h>
 
 
 CListViewWnd::CListViewWnd()
@@ -57,7 +58,7 @@ void CListViewWnd::InitWindow()
 		CTabLayoutUI* pTabUI = (CTabLayoutUI*)pItem->FindSubControl(L"tab");
 		pTabUI->SelectItem(0);
 		pList->Add(pItem);*/
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i < 20; i++)
 		{
 			AddListItem();
 		}
@@ -69,8 +70,9 @@ void CListViewWnd::AddListItem()
 	CListUI* pList = static_cast<CListUI*>(m_PaintManager.FindControl(_T("list")));
 	CDialogBuilder builder;
 	CListContainerElementUI* pItem = static_cast<CListContainerElementUI*>(builder.Create(L"ListItemLayout.xml"));
-	pItem->OnNotify += MakeDelegate(this, &CListViewWnd::OnListItemNotify);
+	//pItem->OnNotify += MakeDelegate(this, &CListViewWnd::OnListItemNotify);
 
+	pItem->OnEvent += MakeDelegate(this, &CListViewWnd::OnListItemNotify);
 	//CButtonUI* pButtonUI = static_cast<CButtonUI*>(pItem->FindSubControl(L"delete"));
 	//pButtonUI->OnNotify += MakeDelegate(this, &CListViewWnd::OnClickedDelete);
 	pList->Add(pItem);
@@ -84,12 +86,13 @@ void CListViewWnd::AddListItem()
  */
 bool CListViewWnd::OnListItemNotify(void* param)
 {
-	TNotifyUI* msg = static_cast<TNotifyUI*>(param);
-	if (msg->sType == DUI_MSGTYPE_ITEMCLICK)
+	TEventUI* msg = static_cast<TEventUI*>(param);
+	if (msg->Type == UIEVENT_MOUSEENTER)
 	{
-		CListContainerElementUI* pItem = static_cast<CListContainerElementUI*>(msg->pSender);
+		/*CListContainerElementUI* pItem = static_cast<CListContainerElementUI*>(msg->pSender);
 		CTabLayoutUI* pTabUI = static_cast<CTabLayoutUI*>(pItem->FindSubControl(L"tab"));
-		pTabUI->SelectItem(1);
+		pTabUI->SelectItem(1);*/
+		::MessageBoxW(m_hWnd, L"UIEVENT_MOUSEENTER", L"Text", MB_OK);
 	}
 
 	return true;

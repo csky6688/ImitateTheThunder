@@ -8,6 +8,8 @@
 				<Control height="5"/>
 				<Text name="content" height="18" text="lalalalala" font="1" />
 			</VerticalLayout>
+
+			<Button name="delete" width="40" height="40" hotimage="image/delete1.png" />
 		</HorizontalLayout>
 	</VerticalLayout>
 </Window>

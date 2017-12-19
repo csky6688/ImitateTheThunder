@@ -15,7 +15,7 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 	CPaintManagerUI::SetInstance(hInstance);
 
 	CListViewWnd duiFrame;
-	duiFrame.Create(NULL, L"DuiFrame", UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
+	duiFrame.Create(NULL, L"DuiFrame", UI_WNDSTYLE_FRAME/*WS_CLIPSIBLINGS*/, WS_EX_WINDOWEDGE);
 
 	duiFrame.CenterWindow();
 	duiFrame.ShowModal();
