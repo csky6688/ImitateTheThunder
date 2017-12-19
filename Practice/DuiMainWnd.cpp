@@ -178,7 +178,7 @@ bool CDuiMainWnd::OnClickedGreenColorButton(void* param)
 {
 	TNotifyUI* msg = (TNotifyUI*)param;
 	CTileLayoutUI* pTile = static_cast<CTileLayoutUI*>(m_PaintManager.FindControl(_T("colortile")));
-	if (msg->sType = DUI_MSGTYPE_CLICK)
+	if (msg->sType == DUI_MSGTYPE_CLICK)
 	{
 		CButtonUI* pBtn = (CButtonUI*)msg->pSender;
 		DWORD gColor = pBtn->GetBkColor();

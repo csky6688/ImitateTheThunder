@@ -12,5 +12,7 @@ public:
 	virtual CControlUI* CreateControl(LPCTSTR pstrClass);
 	virtual void InitWindow();
 	void AddListItem();
+	bool OnListItemNotify(void* param);
+	bool OnClickedDelete(void* param);
 };
 

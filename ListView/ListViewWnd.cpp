@@ -52,7 +52,12 @@ void CListViewWnd::InitWindow()
 	}
 	else
 	{
-		for (int i = 0; i < 10;i++)
+		/*CDialogBuilder builder;
+		CListContainerElementUI* pItem = (CListContainerElementUI*)builder.Create(L"ListItemLayout.xml");
+		CTabLayoutUI* pTabUI = (CTabLayoutUI*)pItem->FindSubControl(L"tab");
+		pTabUI->SelectItem(0);
+		pList->Add(pItem);*/
+		for (int i = 0; i < 10; i++)
 		{
 			AddListItem();
 		}
@@ -61,8 +66,42 @@ void CListViewWnd::InitWindow()
 
 void CListViewWnd::AddListItem()
 {
-	CListUI* pList = (CListUI*)m_PaintManager.FindControl(_T("list"));
+	CListUI* pList = static_cast<CListUI*>(m_PaintManager.FindControl(_T("list")));
 	CDialogBuilder builder;
-	CListContainerElementUI* pItem = (CListContainerElementUI*)builder.Create(L"ListItem.xml");
+	CListContainerElementUI* pItem = static_cast<CListContainerElementUI*>(builder.Create(L"ListItemLayout.xml"));
+	pItem->OnNotify += MakeDelegate(this, &CListViewWnd::OnListItemNotify);
+
+	//CButtonUI* pButtonUI = static_cast<CButtonUI*>(pItem->FindSubControl(L"delete"));
+	//pButtonUI->OnNotify += MakeDelegate(this, &CListViewWnd::OnClickedDelete);
 	pList->Add(pItem);
+}
+
+
+/**
+ * \brief 
+ * \param param 
+ * \return 
+ */
+bool CListViewWnd::OnListItemNotify(void* param)
+{
+	TNotifyUI* msg = static_cast<TNotifyUI*>(param);
+	if (msg->sType == DUI_MSGTYPE_ITEMCLICK)
+	{
+		CListContainerElementUI* pItem = static_cast<CListContainerElementUI*>(msg->pSender);
+		CTabLayoutUI* pTabUI = static_cast<CTabLayoutUI*>(pItem->FindSubControl(L"tab"));
+		pTabUI->SelectItem(1);
+	}
+
+	return true;
+}
+
+bool CListViewWnd::OnClickedDelete(void* param)
+{
+	TNotifyUI* msg = static_cast<TNotifyUI*>(param);
+	if (msg->sType == DUI_MSGTYPE_CLICK)
+	{
+		::MessageBoxW(m_hWnd, L"DUI_MSGTYPE_CLICK", L"Text", MB_OK);
+	}
+
+	return true;
 }
