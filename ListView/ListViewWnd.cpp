@@ -2,6 +2,8 @@
 #include "ListViewWnd.h"
 //#include <afx.h>
 
+#include "ListItemUI.h"
+
 
 CListViewWnd::CListViewWnd()
 {
@@ -37,6 +39,8 @@ CControlUI * CListViewWnd::CreateControl(LPCTSTR pstrClass)
 	{
 		pUI = builder.Create(L"ListView.xml");
 	}
+	if (_tcsicmp(pstrClass, L"ListItem") == 0)
+		return	new CListItemUI();
 
 	return pUI;
 }
@@ -53,15 +57,15 @@ void CListViewWnd::InitWindow()
 	}
 	else
 	{
-		/*CDialogBuilder builder;
-		CListContainerElementUI* pItem = (CListContainerElementUI*)builder.Create(L"ListItemLayout.xml");
-		CTabLayoutUI* pTabUI = (CTabLayoutUI*)pItem->FindSubControl(L"tab");
-		pTabUI->SelectItem(0);
-		pList->Add(pItem);*/
-		for (int i = 0; i < 20; i++)
-		{
+		CDialogBuilder builder;
+		CListItemUI* pItem = (CListItemUI*)builder.Create(L"ListItemLayout.xml");
+		/*CTabLayoutUI* pTabUI = (CTabLayoutUI*)pItem->FindSubControl(L"tab");
+		pTabUI->SelectItem(0);*/
+		pList->Add(pItem);
+		/*	for (int i = 0; i < 20; i++)
+			{
 			AddListItem();
-		}
+			}*/
 	}
 }
 
@@ -69,10 +73,10 @@ void CListViewWnd::AddListItem()
 {
 	CListUI* pList = static_cast<CListUI*>(m_PaintManager.FindControl(_T("list")));
 	CDialogBuilder builder;
-	CListContainerElementUI* pItem = static_cast<CListContainerElementUI*>(builder.Create(L"ListItemLayout.xml"));
+	CListContainerElementUI* pItem = static_cast<CListContainerElementUI*>(builder.Create(L"ListItemLayout.xml",(LPCTSTR)0,(IDialogBuilderCallback*)0,&m_PaintManager,0));
 	//pItem->OnNotify += MakeDelegate(this, &CListViewWnd::OnListItemNotify);
 
-	pItem->OnEvent += MakeDelegate(this, &CListViewWnd::OnListItemNotify);
+	//pItem->OnEvent += MakeDelegate(this, &CListViewWnd::OnListItemNotify);
 	//CButtonUI* pButtonUI = static_cast<CButtonUI*>(pItem->FindSubControl(L"delete"));
 	//pButtonUI->OnNotify += MakeDelegate(this, &CListViewWnd::OnClickedDelete);
 	pList->Add(pItem);
