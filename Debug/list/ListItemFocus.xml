@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <Window size="800,100">
 	<ListContainerElement name="my_list_node" height="50">
-		<VerticalLayout>
-			<HorizontalLayout inset="5,5,5,5">
+		<HorizontalLayout>
+			<HorizontalLayout inset="5,5,5,5" bkcolor="#FFFCF0C1">
 				<Control bkimage="image/person1.png" width="40" height="40" />
 				<VerticalLayout >
 					<Text name="name" height="18" text="test" font="0" />
@@ -10,7 +10,9 @@
 					<Text name="content" height="18" text="lalalalala" font="1" />
 				</VerticalLayout>
 			</HorizontalLayout>
-			<!-- <VerticalLayout height="1" bkcolor="#FFD4E0E1" /> -->
-		</VerticalLayout>
+			<HorizontalLayout inset="5,5,5,5" width="50" bkcolor="#FFFAE198">
+				<Button width="40" height="40" bkimage="image/person2.png" />
+			</HorizontalLayout>
+		</HorizontalLayout>
 	</ListContainerElement>
 </Window>

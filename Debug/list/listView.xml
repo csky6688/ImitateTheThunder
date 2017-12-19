@@ -2,7 +2,7 @@
 <Window size="800,450">
   <VerticalLayout  bkcolor="FFF3F3F3">
   
-      <List name="list" header="hidden">
+      <List name="list" header="hidden" vscrollbar="true" itemlinecolor="#FFD4E0E1">
 
     
       

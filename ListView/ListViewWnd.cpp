@@ -42,7 +42,8 @@ CControlUI * CListViewWnd::CreateControl(LPCTSTR pstrClass)
 
 void CListViewWnd::InitWindow()
 {
-	
+	m_PaintManager.AddFont(0, L"ËÎÌו", 18, true, false, false, true);
+	m_PaintManager.AddFont(1, L"ËÎÌו", 18, false, false, false, true);
 	CListUI* pList = (CListUI*)m_PaintManager.FindControl(_T("list"));
 	if (pList == NULL)
 	{
@@ -51,30 +52,17 @@ void CListViewWnd::InitWindow()
 	}
 	else
 	{
-		/*CListTextElementUI* pItem = new CListTextElementUI();
-		pList->Add(pItem);
-
-		pItem->SetText(0, L"1");
-		pItem->SetText(1, L"1");
-		pItem->SetText(2, L"1");*/
-		CDialogBuilder builder;
-		CListContainerElementUI* pItem = (CListContainerElementUI*)builder.Create(L"ListItem.xml");
-		CTextUI* pText = (CTextUI*)pItem->FindSubControl(L"data");
-		CDuiRect rect = pText->GetRelativePos();
-
-		//pItem->SetMinHeight(rect.GetHeight() + 20);
-
-
-
-		pItem->SetFixedHeight(rect.GetHeight() + 20);
-
-		pList->Add(pItem);
-		/*	CDialogBuilder builder2;
-			CListContainerElementUI* pItem1 = (CListContainerElementUI*)builder2.Create(L"ListItem.xml");
-			pList->Add(pItem1);
-			CDialogBuilder builder3;
-			CListContainerElementUI* pItem2 = (CListContainerElementUI*)builder3.Create(L"ListItem.xml");
-			pList->Add(pItem2);*/
+		for (int i = 0; i < 10;i++)
+		{
+			AddListItem();
+		}
 	}
+}
 
+void CListViewWnd::AddListItem()
+{
+	CListUI* pList = (CListUI*)m_PaintManager.FindControl(_T("list"));
+	CDialogBuilder builder;
+	CListContainerElementUI* pItem = (CListContainerElementUI*)builder.Create(L"ListItem.xml");
+	pList->Add(pItem);
 }
