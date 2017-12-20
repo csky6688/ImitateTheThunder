@@ -18,7 +18,7 @@ CDuiMainWnd::~CDuiMainWnd()
 
 LPCTSTR CDuiMainWnd::GetWindowClassName() const
 {
-	return L"ListViewWnd";
+	return L"DuiMainWnd";
 }
 
 DuiLib::CDuiString CDuiMainWnd::GetSkinFile()
