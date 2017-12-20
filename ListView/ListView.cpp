@@ -4,7 +4,7 @@
 #include "stdafx.h"
 #include "ListView.h"
 
-#include "ListViewWnd.h"
+#include "DuiMainWnd.h"
 
 
 int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
@@ -14,7 +14,7 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 {
 	CPaintManagerUI::SetInstance(hInstance);
 
-	CListViewWnd duiFrame;
+	CDuiMainWnd duiFrame;
 	duiFrame.Create(NULL, L"DuiFrame", UI_WNDSTYLE_FRAME/*WS_CLIPSIBLINGS*/, WS_EX_WINDOWEDGE);
 
 	duiFrame.CenterWindow();

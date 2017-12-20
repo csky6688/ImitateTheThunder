@@ -1,4 +1,5 @@
 #include "StdAfx.h"
+//#include "../../../ListView/ListItemUI.h"
 
 namespace DuiLib {
 
@@ -321,6 +322,7 @@ CControlUI* CDialogBuilder::_Parse(CMarkupNode* pRoot, CControlUI* pParent, CPai
 				else if( _tcsicmp(pstrClass, DUI_CTR_DATETIME) == 0 )		  pControl = new CDateTimeUI;
                 else if( _tcsicmp(pstrClass, DUI_CTR_TREEVIEW) == 0 )         pControl = new CTreeViewUI;
                 else if( _tcsicmp(pstrClass, DUI_CTR_TREENODE) == 0 )		  pControl = new CTreeNodeUI;
+				//else if (_tcsicmp(pstrClass, L"ListItem") == 0)               pControl = new CListItemUI;
                 break;
             case 9:
                 if( _tcsicmp(pstrClass, DUI_CTR_CONTAINER) == 0 )             pControl = new CContainerUI;
@@ -350,6 +352,7 @@ CControlUI* CDialogBuilder::_Parse(CMarkupNode* pRoot, CControlUI* pParent, CPai
             case 20:
                 if( _tcsicmp(pstrClass, DUI_CTR_LISTCONTAINERELEMENT) == 0 )  pControl = new CListContainerElementUI;
                 break;
+			
             }
             // User-supplied control factory
             if( pControl == NULL ) {

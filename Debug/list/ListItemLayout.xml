@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <Window size="800,100">
-	<ListContainerElement name="my_list_node" height="50">
+	<ListItem name="my_list_node" height="50">
 		<VerticalLayout>
 			<TabLayout name="tab">
 				<ChildLayout xmlfile="ListItemNormal.xml" />
-				<ChildLayout xmlfile="ListItemFocus.xml" />
+				<ChildLayout xmlfile="ListItemHover.xml" />
 			</TabLayout>
 		</VerticalLayout>
-	</ListContainerElement>
+	</ListItem>
 </Window>

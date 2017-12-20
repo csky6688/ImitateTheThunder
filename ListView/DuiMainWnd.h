@@ -1,9 +1,9 @@
 #pragma once
-class CListViewWnd:public WindowImplBase
+class CDuiMainWnd:public WindowImplBase
 {
 public:
-	CListViewWnd();
-	~CListViewWnd();
+	CDuiMainWnd();
+	~CDuiMainWnd();
 
 	virtual LPCTSTR GetWindowClassName() const;
 	virtual CDuiString GetSkinFile();
@@ -12,7 +12,5 @@ public:
 	virtual CControlUI* CreateControl(LPCTSTR pstrClass);
 	virtual void InitWindow();
 	void AddListItem();
-	bool OnListItemNotify(void* param);
-	bool OnClickedDelete(void* param);
 };
 

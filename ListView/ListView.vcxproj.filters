@@ -30,10 +30,13 @@
     <ClInclude Include="ListView.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="ListViewWnd.h">
+    <ClInclude Include="ListItemUI.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="ListItemUI.h">
+    <ClInclude Include="ListViewUI.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DuiMainWnd.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -44,10 +47,13 @@
     <ClCompile Include="ListView.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="ListViewWnd.cpp">
+    <ClCompile Include="ListItemUI.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="ListItemUI.cpp">
+    <ClCompile Include="ListViewUI.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DuiMainWnd.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

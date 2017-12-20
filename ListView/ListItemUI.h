@@ -11,5 +11,15 @@ public:
 	LPCTSTR GetClass() const;
 	LPVOID GetInterface(LPCTSTR pstrName);
 	void DoEvent(TEventUI& event);
+
+	LPCTSTR m_strItemName;
+	LPCTSTR m_strItemContent;
+	LPCTSTR m_strItemInfo;
+
+	//bool Select(bool bSelect = true, bool bTriggerEvent = true) override;
+
+	void SetItemName(LPCTSTR strName);
+	void SetItemContent(LPCTSTR strContent);
+	void SetItemInfo(LPCTSTR strInfo);
 };
 

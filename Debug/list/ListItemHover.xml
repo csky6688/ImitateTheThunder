@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<Window size="300,50">
-	<VerticalLayout>
-		<HorizontalLayout inset="5,5,5,5">
+<Window size="800,100">
+	<HorizontalLayout>
+		<HorizontalLayout inset="5,5,5,5" bkcolor="#FFFCF0C1">
 			<Control bkimage="image/person1.png" width="40" height="40" />
 			<VerticalLayout >
 				<Text name="name" height="18" text="test" font="0" />
 				<Control height="5"/>
 				<Text name="content" height="18" text="lalalalala" font="1" />
 			</VerticalLayout>
-
-			<Button name="delete" width="40" height="40" hotimage="image/delete1.png" pushedimage="image/delete1.png" />
 		</HorizontalLayout>
-	</VerticalLayout>
+		<HorizontalLayout inset="5,5,5,5" width="50" bkcolor="#FFFAE198">
+			<Button name="delete" width="40" height="40" bkimage="image/delete1.png" />
+		</HorizontalLayout>
+	</HorizontalLayout>
 </Window>
