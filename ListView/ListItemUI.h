@@ -18,6 +18,8 @@ public:
 
 	//bool Select(bool bSelect = true, bool bTriggerEvent = true) override;
 
+	void SetActive(bool bActive = true);
+
 	void SetItemName(LPCTSTR strName);
 	void SetItemContent(LPCTSTR strContent);
 	void SetItemInfo(LPCTSTR strInfo);

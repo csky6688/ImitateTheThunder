@@ -86,6 +86,14 @@ void CListItemUI::SetItemInfo(LPCTSTR strInfo)
 	pTextUI->SetText(strInfo);
 }
 
+void CListItemUI::SetActive(bool bActive /*= true*/)
+{
+	CTabLayoutUI* pTabUI = static_cast<CTabLayoutUI*>(this->FindSubControl(L"tab"));
+
+	this->SetFixedHeight(80);
+	pTabUI->SelectItem(2);
+}
+
 //bool CListItemUI::Select(bool bSelect /*= true*/, bool bTriggerEvent /*= true*/)
 //{
 //	return CListContainerElementUI::Select(bSelect, bTriggerEvent);

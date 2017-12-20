@@ -11,6 +11,6 @@ public:
 
 	virtual CControlUI* CreateControl(LPCTSTR pstrClass);
 	virtual void InitWindow();
-	void AddListItem();
+	void AddListItem(int index);
 };
 

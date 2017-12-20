@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Window size="800,450">
 	<VerticalLayout bkcolor="FFF3F3F3">
-		<List name="list" header="hidden" vscrollbar="true" bordercolor="#FFEE00EE" itemlinecolor="#FFD4E0E1">
-			<ScrollBar name="scroll" hor="false" bkcolor="0xFF000000" />
-		</List>
+		<list name="list" header="hidden" vscrollbar="true" bordercolor="#FFEE00EE" itemlinecolor="#FFD4E0E1">
+			<!-- <ScrollBar name="scroll" hor="false" bkcolor="0xFF000000" /> -->
+		</list>
 	</VerticalLayout>
 </Window>

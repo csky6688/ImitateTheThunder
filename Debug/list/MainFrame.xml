@@ -14,7 +14,8 @@
                 </HorizontalLayout>
             </HorizontalLayout>
             <HorizontalLayout >
-                <ListView />
+                <!-- <ListViewLayout /> -->
+                <ChildLayout xmlfile="ListView.xml" />
             </HorizontalLayout>
         </VerticalLayout>
     <!-- </VerticalLayout> -->
