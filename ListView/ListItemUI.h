@@ -20,6 +20,8 @@ public:
 
 	void SetActive(bool bActive = true);
 
+	bool m_bActive;
+
 	void SetItemName(LPCTSTR strName);
 	void SetItemContent(LPCTSTR strContent);
 	void SetItemInfo(LPCTSTR strInfo);

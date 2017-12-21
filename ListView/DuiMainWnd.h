@@ -11,6 +11,7 @@ public:
 
 	virtual CControlUI* CreateControl(LPCTSTR pstrClass);
 	virtual void InitWindow();
-	void AddListItem(int index);
+
+	virtual void Notify(TNotifyUI& msg);
 };
 

@@ -33,8 +33,8 @@
 				</VerticalLayout>
 				<VerticalLayout name="focus" height="80">
 					<HorizontalLayout height="80">
-						<HorizontalLayout inset="5,5,5,5" bkcolor="#FFFCF0C1">
-							<Control bkimage="image/person1.png" width="70" height="70" />
+						<HorizontalLayout inset="5,5,5,5" bkcolor="#FFFAE198">
+							<Control bkimage="image/person4.png" width="70" height="70" />
 							<VerticalLayout >
 								<Text name="name" height="18" text="test" font="0" />
 								<Control height="5"/>
@@ -43,6 +43,7 @@
 									<Button name="like" width="20" height="20" normalimage="image/like1.png" hotimage="image/like2.png" pushedimage="image/like2.png" />
 									<Button name="gift" width="20" height="20" normalimage="image/gift1.png" hotimage="image/gift2.png" pushedimage="image/gift2.png" />
 									<Button name="flower" width="20" height="20" normalimage="image/flower1.png" hotimage="image/flower2.png" pushedimage="image/flower2.png" />
+									<Button name="collect" width="20" height="20" normalimage="image/collect1.png" hotimage="image/collect2.png" pushedimage="image/collect2.png" />
 								</HorizontalLayout>
 							</VerticalLayout>
 						</HorizontalLayout>

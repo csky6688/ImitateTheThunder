@@ -4,11 +4,13 @@
 
 CListItemUI::CListItemUI()
 {
-	DUI__Trace(L"\t------CListItemUI\n");
+	DUI__Trace(L"\t------CListItemUI");
 
 	m_strItemName = L"test";
 	m_strItemContent = L"abc12345lalalala";
 	m_strItemInfo = L"Hello World,Hello Duilib";
+
+	m_bActive = false;
 }
 
 
@@ -25,18 +27,21 @@ void CListItemUI::DoEvent(TEventUI& event)
 {
 	CTabLayoutUI* pTabUI = static_cast<CTabLayoutUI*>(this->FindSubControl(L"tab"));
 
-	if (event.Type == UIEVENT_MOUSEENTER)
+	if (!m_bActive)
 	{
-		this->SetFixedHeight(50);
-		pTabUI->SelectItem(1);
-	}
-	else if (event.Type == UIEVENT_MOUSELEAVE)
-	{
-		this->SetFixedHeight(50);
-		pTabUI->SelectItem(0);
+		if (event.Type == UIEVENT_MOUSEENTER)
+		{
+			this->SetFixedHeight(50);
+			pTabUI->SelectItem(1);
+		}
+		else if (event.Type == UIEVENT_MOUSELEAVE)
+		{
+			this->SetFixedHeight(50);
+			pTabUI->SelectItem(0);
+		}
 	}
 
-	DUI__Trace(L"\t---------------->%d\n", event.Type);
+	//DUI__Trace(L"\t---------------->%d\n", event.Type);
 
 	CListContainerElementUI::DoEvent(event);
 }
@@ -59,8 +64,6 @@ void CListItemUI::SetItemName(LPCTSTR strName)
 		CTextUI* pTextUI = static_cast<CTextUI*>(pContainerUI->FindSubControl(L"name"));
 		pTextUI->SetText(strName);
 	}
-
-	//this->Invalidate();
 }
 
 void CListItemUI::SetItemContent(LPCTSTR strContent)
@@ -88,13 +91,20 @@ void CListItemUI::SetItemInfo(LPCTSTR strInfo)
 
 void CListItemUI::SetActive(bool bActive /*= true*/)
 {
+	m_bActive = bActive;
 	CTabLayoutUI* pTabUI = static_cast<CTabLayoutUI*>(this->FindSubControl(L"tab"));
 
-	this->SetFixedHeight(80);
-	pTabUI->SelectItem(2);
+
+	if (m_bActive)
+	{
+		this->SetFixedHeight(80);
+		pTabUI->SelectItem(2);
+	}
+	else
+	{
+		this->SetFixedHeight(50);
+		pTabUI->SelectItem(0);
+	}
 }
 
-//bool CListItemUI::Select(bool bSelect /*= true*/, bool bTriggerEvent /*= true*/)
-//{
-//	return CListContainerElementUI::Select(bSelect, bTriggerEvent);
-//}
+
