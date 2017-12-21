@@ -74,7 +74,7 @@ void CDuiMainWnd::AddListItem(int index)
 	CListUI* pList = static_cast<CListUI*>(m_PaintManager.FindControl(_T("list")));
 	CDialogBuilder builder;
 	CListItemUI* pItem = static_cast<CListItemUI*>(builder.Create(L"ListItemAllLayout.xml", (UINT)0, this, &m_PaintManager));
-	//CTextUI* pTextUI = pItem->FindSubControl(L"");
+
 	CDuiString text;
 	text.Format(L"test-%02d", index);
 	pItem->SetItemName(text);

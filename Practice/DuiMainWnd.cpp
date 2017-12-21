@@ -310,7 +310,7 @@ void CDuiMainWnd::Notify(TNotifyUI& msg)
 		CDialogBuilder builder;
 		if (strName == L"addListItem")
 		{
-			/*CListContainerElementUI* pElem = NULL;
+			CListContainerElementUI* pElem = NULL;
 			pElem = (CListContainerElementUI*)builder.Create(L"ListItem.xml");
 
 			CControlUI* pImage = pElem->FindSubControl(L"itemimage");
@@ -322,9 +322,9 @@ void CDuiMainWnd::Notify(TNotifyUI& msg)
 			CTextUI* pNick = (CTextUI*)pElem->FindSubControl(L"nick");
 			CString strNick;
 			strNick.Format(L"NickName%ld", rand());
-			pNick->SetText(strNick);*/
+			pNick->SetText(strNick);
 
-			CMyListItem* pElem = (CMyListItem*)builder.Create(L"ListItem.xml");
+			//CMyListItem* pElem = (CMyListItem*)builder.Create(L"ListItem.xml");
 
 			pList->Add(pElem);
 		}
