@@ -83,6 +83,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ItemInfoWnd.h" />
     <ClInclude Include="ListItemUI.h" />
     <ClInclude Include="ListView.h" />
     <ClInclude Include="ListViewUI.h" />
@@ -92,6 +93,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ItemInfoWnd.cpp" />
     <ClCompile Include="ListItemUI.cpp" />
     <ClCompile Include="ListView.cpp" />
     <ClCompile Include="ListViewUI.cpp" />

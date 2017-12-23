@@ -39,6 +39,9 @@
     <ClInclude Include="DuiMainWnd.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="ItemInfoWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -54,6 +57,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="DuiMainWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemInfoWnd.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

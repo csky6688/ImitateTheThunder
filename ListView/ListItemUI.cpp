@@ -11,6 +11,8 @@ CListItemUI::CListItemUI()
 	m_strItemInfo = L"Hello World,Hello Duilib";
 
 	m_bActive = false;
+
+	m_wndItemInfo = NULL;
 }
 
 
@@ -38,12 +40,52 @@ void CListItemUI::DoEvent(TEventUI& event)
 		{
 			this->SetFixedHeight(50);
 			pTabUI->SelectItem(0);
+
+
+			//SetTimer(1000);
+
+			if (m_wndItemInfo)
+			{
+				m_wndItemInfo->Close();
+				//delete m_wndItemInfo;
+				m_wndItemInfo = NULL;
+			}
+		}
+		else if (event.Type == UIEVENT_MOUSEHOVER)
+		{
+			if (m_wndItemInfo== NULL)
+			{
+				RECT rect = GetPos();
+				POINT pos;
+				pos.x = rect.left;
+				pos.y = rect.top;
+				::ClientToScreen(m_pManager->GetPaintWindow(), &pos);
+				m_wndItemInfo = new CItemInfoWnd();
+				m_wndItemInfo->Create(m_pManager->GetPaintWindow(), L"ItemInfo", UI_WNDSTYLE_FRAME,
+					WS_EX_WINDOWEDGE, CDuiRect(GetPos().left + 300, GetRelativePos().top, 250, 100));
+
+				::SetWindowPos(m_wndItemInfo->GetHWND(), HWND_TOP, pos.x + 300, pos.y, 250, 100, SWP_SHOWWINDOW);
+				m_wndItemInfo->ShowWindow(true);
+			}
 		}
 	}
-
-	//DUI__Trace(L"\t---------------->%d\n", event.Type);
-
 	CListContainerElementUI::DoEvent(event);
+}
+
+void CListItemUI::CloseInfoWnd()
+{
+	if (m_wndItemInfo)
+		::KillTimer(m_wndItemInfo->GetHWND(), 1);
+	m_wndItemInfo->Close();
+	//delete m_wndItemInfo;
+	m_wndItemInfo = NULL;
+}
+
+
+void CListItemUI::SetTimer(UINT uElapse)
+{
+	if (m_wndItemInfo)
+		::SetTimer(m_wndItemInfo->GetHWND(), 1, uElapse, NULL);
 }
 
 LPVOID CListItemUI::GetInterface(LPCTSTR pstrName)
@@ -106,5 +148,7 @@ void CListItemUI::SetActive(bool bActive /*= true*/)
 		pTabUI->SelectItem(0);
 	}
 }
+
+
 
 

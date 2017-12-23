@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window size="250,100">
+    <VerticalLayout bkcolor="#11DDDDDD">
+        <HorizontalLayout height="20">
+            <Text name="itemName" text="test123" />
+        </HorizontalLayout>
+        <HorizontalLayout>
+            <VerticalLayout width="60">
+                <Control name="image" height="60" width="60" bkimage="image/person1.png" />
+            </VerticalLayout>
+            <VerticalLayout>
+                <Text name="qqnum" text="QQ:12334444" />
+                <Text name="phonenum" text="TEL:1222222222222" />
+                 <Text name="info" text="Hello WOrld." />
+            </VerticalLayout>
+        </HorizontalLayout>
+    </VerticalLayout>
+</Window>

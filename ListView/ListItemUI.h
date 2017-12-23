@@ -1,6 +1,7 @@
 #pragma once
 #include "stdafx.h"
 
+#include "ItemInfoWnd.h"
 
 class CListItemUI:public CListContainerElementUI
 {
@@ -22,8 +23,13 @@ public:
 
 	bool m_bActive;
 
+	CItemInfoWnd* m_wndItemInfo;
+
 	void SetItemName(LPCTSTR strName);
 	void SetItemContent(LPCTSTR strContent);
 	void SetItemInfo(LPCTSTR strInfo);
+
+	void CloseInfoWnd();
+	void SetTimer(UINT uElapse);
 };
 
