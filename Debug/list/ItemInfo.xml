@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<Window size="250,100">
+<Window size="250,90">
+    <Font id="2" name="宋体" size="22" bold="false" italic="false" />
+    <Font id="3" name="宋体" size="18" bold="false" italic="false" />
     <VerticalLayout bkcolor="#11DDDDDD">
-        <HorizontalLayout height="20">
-            <Text name="itemName" text="test123" />
+        <HorizontalLayout height="25">
+            <Control width="10"/>
+            <Text name="itemName" font="2" text="test123" />
         </HorizontalLayout>
         <HorizontalLayout>
             <VerticalLayout width="60">
                 <Control name="image" height="60" width="60" bkimage="image/person1.png" />
             </VerticalLayout>
-            <VerticalLayout>
-                <Text name="qqnum" text="QQ:12334444" />
-                <Text name="phonenum" text="TEL:1222222222222" />
-                 <Text name="info" text="Hello WOrld." />
+            <VerticalLayout height="60">
+                <Text height="20" font="3" name="qqnum" text="QQ:12334444" />
+                <Text height="20" font="3" name="phonenum" text="TEL:1222222222222" />
+                <Text height="20" font="3" name="info" text="Hello World." />
             </VerticalLayout>
         </HorizontalLayout>
     </VerticalLayout>

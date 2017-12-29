@@ -62,9 +62,9 @@ void CListItemUI::DoEvent(TEventUI& event)
 				::ClientToScreen(m_pManager->GetPaintWindow(), &pos);
 				m_wndItemInfo = new CItemInfoWnd();
 				m_wndItemInfo->Create(m_pManager->GetPaintWindow(), L"ItemInfo", UI_WNDSTYLE_FRAME,
-					WS_EX_WINDOWEDGE, CDuiRect(GetPos().left + 300, GetRelativePos().top, 250, 100));
+					WS_EX_WINDOWEDGE, CDuiRect(GetPos().left + 300, GetRelativePos().top, 250, 80));
 
-				::SetWindowPos(m_wndItemInfo->GetHWND(), HWND_TOP, pos.x + 300, pos.y, 250, 100, SWP_SHOWWINDOW);
+				::SetWindowPos(m_wndItemInfo->GetHWND(), HWND_TOP, pos.x + 300, pos.y, 250, 90, SWP_SHOWWINDOW);
 				m_wndItemInfo->ShowWindow(true);
 			}
 		}
