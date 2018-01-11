@@ -33,9 +33,11 @@ LRESULT CItemInfoWnd::HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
 	BOOL bHandled = TRUE;
 	switch (uMsg)
 	{
-	case WM_TIMER: lRes = OnTimer(uMsg, wParam, lParam, bHandled);
+	case WM_TIMER: 
+		lRes = OnTimer(uMsg, wParam, lParam, bHandled);
 		break;
-	default: bHandled = FALSE;
+	default: 
+		bHandled = FALSE;
 		break;
 	}
 
