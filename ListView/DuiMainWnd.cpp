@@ -47,7 +47,7 @@ void CDuiMainWnd::InitWindow()
 
 void CDuiMainWnd::Notify(TNotifyUI& msg)
 {
-	CListViewUI* pListView = (CListViewUI*)m_PaintManager.FindControl(L"mylist");
+	CListViewUI* pListView = static_cast<CListViewUI*>(m_PaintManager.FindControl(L"mylist"));
 
 	if (msg.sType == DUI_MSGTYPE_ITEMSELECT)
 	{

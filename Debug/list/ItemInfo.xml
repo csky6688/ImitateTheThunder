@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<Window size="250,90">
-    <Font id="2" name="宋体" size="22" bold="false" italic="false" />
-    <Font id="3" name="宋体" size="18" bold="false" italic="false" />
-    <VerticalLayout bkcolor="#11DDDDDD">
+<Window size="250,90" brtrans="true" alpha="200" bkimage="file='image/bk.png'" >
+    <Font id="2" name="??" size="22" bold="false" italic="false" />
+    <Font id="3" name="??" size="18" bold="false" italic="false" />
+    <VerticalLayout>
         <HorizontalLayout height="25">
             <Control width="10"/>
             <Text name="itemName" font="2" text="test123" />

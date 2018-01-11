@@ -47,7 +47,6 @@ void CListItemUI::DoEvent(TEventUI& event)
 			if (m_wndItemInfo)
 			{
 				m_wndItemInfo->Close();
-				//delete m_wndItemInfo;
 				m_wndItemInfo = NULL;
 			}
 		}
@@ -135,7 +134,6 @@ void CListItemUI::SetActive(bool bActive /*= true*/)
 {
 	m_bActive = bActive;
 	CTabLayoutUI* pTabUI = static_cast<CTabLayoutUI*>(this->FindSubControl(L"tab"));
-
 
 	if (m_bActive)
 	{
