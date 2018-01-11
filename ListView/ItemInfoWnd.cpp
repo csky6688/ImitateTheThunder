@@ -40,7 +40,8 @@ LRESULT CItemInfoWnd::HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
 	}
 
 	if (bHandled) return lRes;
-	if (m_PaintManager.MessageHandler(uMsg, wParam, lParam, lRes)) return lRes;
+	if (m_PaintManager.MessageHandler(uMsg, wParam, lParam, lRes)) 
+		return lRes;
 	return WindowImplBase::HandleMessage(uMsg, wParam, lParam);
 }
 
