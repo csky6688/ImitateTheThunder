@@ -54,13 +54,13 @@ bool CListViewUI::SetActiveItem(int iIndex, bool bTakeFocus)
 
 	if (m_nActiveItem != -1)
 	{
-		CListItemUI* pItem = (CListItemUI*)this->GetItemAt(m_nActiveItem);
+		CListItemUI* pItem = static_cast<CListItemUI*>(this->GetItemAt(m_nActiveItem));
 		pItem->SetActive(false);
 	}
 	m_nActiveItem = iIndex;
 	if (m_nActiveItem != -1)
 	{
-		CListItemUI* pItem = (CListItemUI*)this->GetItemAt(m_nActiveItem);
+		CListItemUI* pItem = static_cast<CListItemUI*>(this->GetItemAt(m_nActiveItem));
 		pItem->SetActive(true);
 	}
 
@@ -71,7 +71,6 @@ CControlUI* CListViewUI::CreateControl(LPCTSTR pstrClass)
 {
 	if (_tcsicmp(pstrClass, L"ListItem") == 0)
 		return	new CListItemUI();
-	
 
 	return NULL;
 }

@@ -17,12 +17,12 @@ LPCTSTR CItemInfoWnd::GetWindowClassName() const
 	return L"DuiMainWnd";
 }
 
-DuiLib::CDuiString CItemInfoWnd::GetSkinFile()
+CDuiString CItemInfoWnd::GetSkinFile()
 {
 	return L"ItemInfo.xml";
 }
 
-DuiLib::CDuiString CItemInfoWnd::GetSkinFolder()
+CDuiString CItemInfoWnd::GetSkinFolder()
 {
 	return L"list";
 }
@@ -33,8 +33,10 @@ LRESULT CItemInfoWnd::HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
 	BOOL bHandled = TRUE;
 	switch (uMsg)
 	{
-	case WM_TIMER: lRes = OnTimer(uMsg, wParam, lParam, bHandled); break;
-	default: bHandled = FALSE; break;
+	case WM_TIMER: lRes = OnTimer(uMsg, wParam, lParam, bHandled);
+		break;
+	default: bHandled = FALSE;
+		break;
 	}
 
 	if (bHandled) return lRes;
@@ -48,5 +50,4 @@ LRESULT CItemInfoWnd::OnTimer(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHa
 	Close();
 
 	return 0;
-	
 }

@@ -33,7 +33,7 @@ void CDuiFrameWnd::InitWindow()
 {
 	SetIcon(IDI_ICON_BLACK);
 
-	CListUI* pList = (CListUI*)m_PaintManager.FindControl(_T("itemlist"));
+	CListUI* pList = static_cast<CListUI*>(m_PaintManager.FindControl(_T("itemlist")));
 	if (pList == NULL)
 	{
 		::MessageBox(NULL,L"List NULL",L"Error",NULL);
@@ -43,20 +43,20 @@ void CDuiFrameWnd::InitWindow()
 	CDialogBuilder builder;
 	CListContainerElementUI* pElem = NULL;
 
-	pElem = (CListContainerElementUI*)builder.Create(L"xlListNodeFocusEx.xml");
+	pElem = static_cast<CListContainerElementUI*>(builder.Create(L"xlListNodeFocusEx.xml"));
 
 	CDialogBuilder builder2;
 	CListContainerElementUI* pElem2 = NULL;
 
-	pElem2 = (CListContainerElementUI*)builder2.Create(L"xlListNodeFocusEx.xml");
+	pElem2 = static_cast<CListContainerElementUI*>(builder2.Create(L"xlListNodeFocusEx.xml"));
 
-	CLabelUI* pFileName = (CLabelUI*)pElem->FindSubControl(L"fileName");
+	CLabelUI* pFileName = static_cast<CLabelUI*>(pElem->FindSubControl(L"fileName"));
 	pFileName->SetText(L"Firefox-55.0.3.6445-setup.exe");
 
 	pList->Add(pElem);
 	pList->Add(pElem2);
 
-	CButtonUI* pLogin = (CButtonUI*)m_PaintManager.FindControl(L"loginGif");
+	CButtonUI* pLogin = static_cast<CButtonUI*>(m_PaintManager.FindControl(L"loginGif"));
 	pLogin->OnNotify += MakeDelegate(this, &CDuiFrameWnd::OnClickedLogin);
 }
 
@@ -64,7 +64,7 @@ void CDuiFrameWnd::InitWindow()
 bool CDuiFrameWnd::OnClickedLogin(void* lParam)
 {
 
-	TNotifyUI* msg = (TNotifyUI*)lParam;
+	TNotifyUI* msg = static_cast<TNotifyUI*>(lParam);
 
 	if (msg->sType == DUI_MSGTYPE_CLICK)
 	{
