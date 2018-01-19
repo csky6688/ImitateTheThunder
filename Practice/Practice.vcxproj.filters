@@ -33,9 +33,6 @@
     <ClInclude Include="DuiMainWnd.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="MyListItem.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="ARGB.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -48,9 +45,6 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="DuiMainWnd.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="MyListItem.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

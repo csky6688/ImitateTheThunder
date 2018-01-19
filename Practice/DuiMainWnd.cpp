@@ -10,11 +10,9 @@ CDuiMainWnd::CDuiMainWnd()
 	pNode = nullptr;
 }
 
-
 CDuiMainWnd::~CDuiMainWnd()
 {
 }
-
 
 LPCTSTR CDuiMainWnd::GetWindowClassName() const
 {
@@ -31,8 +29,6 @@ CDuiString CDuiMainWnd::GetSkinFolder()
 	return L"practice";
 }
 
-
-//#include <locale.h>
 void CDuiMainWnd::InitWindow()
 {
 	srand(static_cast<unsigned int>(time(nullptr)));
@@ -81,30 +77,20 @@ void CDuiMainWnd::InitWindow()
 		pColor->OnNotify += MakeDelegate(this, &CDuiMainWnd::OnClickedColorButton);
 	}
 
-
 	CTileLayoutUI* pTileGreen = static_cast<CTileLayoutUI*>(m_PaintManager.FindControl(L"gtile"));
 	for (WORD i = 0; i < 255; i++)
 	{
 		pColor = new CButtonUI();
-		/*CString color;
-		color.Format(L"FFFF%02xFF", i);
-		LPTSTR pstr = NULL;*/
 		pColor->SetBkColor(ARGB(255,255,i,255));
 		pTileGreen->Add(pColor);
-
-		//pColor->SetTextColor()
 
 		pColor->OnNotify += MakeDelegate(this, &CDuiMainWnd::OnClickedGreenColorButton);
 	}
 
-
 	CTileLayoutUI* pTile1 = static_cast<CTileLayoutUI*>(m_PaintManager.FindControl(L"tilelayout"));
 	CTileLayoutUI* pTile2 = static_cast<CTileLayoutUI*>(m_PaintManager.FindControl(L"tilelayout2"));
 
-	//pTile1->gItem
-
 	pTile1->OnNotify += MakeDelegate(this, &CDuiMainWnd::OnClickedTileItem);
-
 
 	/*CDialogBuilder builder2;
 	CContainerUI* pTileItem = (CContainerUI*)builder2.Create(L"TileItem.xml", NULL, NULL, &m_PaintManager, NULL);
@@ -154,7 +140,6 @@ bool CDuiMainWnd::OnClickedColorButton(void* param)
 			pButton->SetBkColor(ARGB(255, GetRValueOfARGB(bkcolor), i, GetBValueOfARGB(bkcolor)));
 		}
 	}
-
 	return true;
 }
 
@@ -201,9 +186,6 @@ void CDuiMainWnd::ColorInit()
 	}
 }
 
-//GetRValue;
-
-//GetRValue();
 
 DWORD CDuiMainWnd::Array2ARGB(BYTE* array)
 {
@@ -212,8 +194,6 @@ DWORD CDuiMainWnd::Array2ARGB(BYTE* array)
 
 void CDuiMainWnd::Arr(BYTE* str, int pos, int len)
 {
-	//CStdioFile file;
-	//file.Open(L"array.txt",CFile::modeCreate|CFile::modeWrite|CFile::typeText);
 	for (size_t i = 0; i < list.size(); i++)
 	{
 		str[pos] = list[i];
@@ -247,9 +227,6 @@ CControlUI* CDuiMainWnd::CreateControl(LPCTSTR pstrClassName)
 		pUI = builder.Create(L"rightPane.xml");
 	}
 	return pUI;
-
-
-	//return NULL;
 }
 
 
@@ -274,7 +251,6 @@ void CDuiMainWnd::Notify(TNotifyUI& msg)
 		if (msg.pSender->GetParent()->GetName() == L"tilelayout")
 		{
 			CTileLayoutUI* pTile = static_cast<CTileLayoutUI*>(m_PaintManager.FindControl(L"tilelayout"));
-			//::MessageBox(NULL,L"TileItem",L"Tile",NULL);
 
 			CButtonUI* pButton = static_cast<CButtonUI*>(msg.pSender);
 			int index = pTile->GetItemIndex(msg.pSender);
@@ -282,7 +258,6 @@ void CDuiMainWnd::Notify(TNotifyUI& msg)
 			text.Format(L"%d", index);
 			pButton->SetText(text);
 			pButton->SetFont(0);
-			//return;
 		}
 		CDuiString strName = msg.pSender->GetName();
 		CListUI* pList = static_cast<CListUI*>(m_PaintManager.FindControl(_T("list")));
@@ -304,8 +279,6 @@ void CDuiMainWnd::Notify(TNotifyUI& msg)
 			strNick.Format(L"NickName%ld", rand());
 			pNick->SetText(strNick);
 
-			//CMyListItem* pElem = (CMyListItem*)builder.Create(L"ListItem.xml");
-
 			pList->Add(pElem);
 		}
 		else if (strName == L"delListItem")
@@ -320,37 +293,15 @@ void CDuiMainWnd::Notify(TNotifyUI& msg)
 		}
 		else if (strName == L"addTreeNode")
 		{
-			//CMyListItem* pNode = NULL;
-
-			//CControlUI* pBase = builder.Create(L"TreeItem.xml");
-
-			/*pNode = (CTreeNodeUI*)m_PaintManager.FindControl(_T("tree_node_head"));
-
-			CTreeNodeUI* pItem = new CTreeNodeUI();
-
-			memcpy(pItem,pNode,sizeof(*pNode));
-
-
-			pNode->Add(pItem);*/
-
-			CTreeNodeUI* pNode = static_cast<CTreeNodeUI*>(builder.Create(L"TreeItem.xml", L"TreeNode", nullptr, &m_PaintManager, pTree));
-
-			pTree->Add(pNode);
 		}
 	}
-
 
 	else if (msg.sType == DUI_MSGTYPE_ITEMCLICK)
 	{
 		CListUI* pList = static_cast<CListUI*>(m_PaintManager.FindControl(_T("list")));
-		/*int nIndex = pList->GetCurSel();
-		pList->GetSel
-		CString text;
-		text.Format(L"%d", nIndex);
-		::MessageBox(NULL, text, L"2", MB_OK);*/
+
 		pList->OnNotify += MakeDelegate(this, &CDuiMainWnd::OnClickedList);
 	}
-
 
 	__super::Notify(msg);
 }

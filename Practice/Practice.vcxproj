@@ -81,7 +81,6 @@
   <ItemGroup>
     <ClInclude Include="ARGB.h" />
     <ClInclude Include="DuiMainWnd.h" />
-    <ClInclude Include="MyListItem.h" />
     <ClInclude Include="Practice.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
@@ -89,7 +88,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DuiMainWnd.cpp" />
-    <ClCompile Include="MyListItem.cpp" />
     <ClCompile Include="Practice.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
