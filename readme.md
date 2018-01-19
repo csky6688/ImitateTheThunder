@@ -7,5 +7,5 @@
 #### 当前进度:
 ![当前进度](./Debug/process/1.png)
 
-###其他
+### 其他:
 ![List](./Debug/process/list.gif)
